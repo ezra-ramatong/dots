@@ -18,7 +18,7 @@ Except now I have to debloat this chunky system because... Minimalism?
 
 ## What you need
 
-> [!DISCLAIMER]
+> [!WARNING]
 > This guide assumes you **know** how to install packages for your particular operating system.
 
 - [x] `git`
