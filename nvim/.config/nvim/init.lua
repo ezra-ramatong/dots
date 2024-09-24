@@ -408,9 +408,9 @@ require("lazy").setup({
 				completion = {
 					completeopt = "menu,menuone",
 				},
-				experimental = {
+				--[[ experimental = {
 					ghost_text = true,
-				},
+				}, ]]
 				snippet = {
 					expand = function(args)
 						luasnip.lsp_expand(args.body)
