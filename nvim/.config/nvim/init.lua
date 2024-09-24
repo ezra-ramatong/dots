@@ -838,8 +838,8 @@ require("lazy").setup({
 	},
 
 	-- Inline Git Blame
-	{
+	--[[ {
 		"f-person/git-blame.nvim",
 		event = "VeryLazy",
-	},
+	}, ]]
 }, { defaults = { lazy = true } })
