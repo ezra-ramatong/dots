@@ -188,7 +188,7 @@ require("lazy").setup({
 				},
 				no_italic = false,
 			})
-			vim.cmd([[colorscheme catppuccin-mocha]])
+			vim.cmd([[colorscheme catppuccin-frappe]])
 		end,
 	},
 
@@ -238,7 +238,7 @@ require("lazy").setup({
 				},
 			})
 			require("telescope").load_extension("fzf")
-			require("telescope").load_extension("harpoon")
+			-- require("telescope").load_extension("harpoon")
 		end,
 	},
 
@@ -310,7 +310,6 @@ require("lazy").setup({
 		config = function()
 			-- Servers
 			local servers = {
-				clangd = {},
 				lua_ls = {
 					Lua = {
 						diagnostics = {
@@ -318,11 +317,19 @@ require("lazy").setup({
 						},
 					},
 				},
-
-				html = {},
-				cssls = {},
-				emmet_ls = {},
-				tsserver = {},
+				ts_ls = {},
+				jsonls = {
+					settings = {
+						json = {
+							schemas = {
+								{
+									fileMatch = { "package.json" },
+									url = "https://json.schemastore.org/package.json",
+								},
+							},
+						},
+					},
+				},
 			}
 
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -396,6 +403,14 @@ require("lazy").setup({
 			},
 			"saadparwaiz1/cmp_luasnip",
 			"hrsh7th/cmp-nvim-lsp-signature-help",
+			{
+				"David-Kunz/cmp-npm",
+				dependencies = { "nvim-lua/plenary.nvim" },
+				ft = "json",
+				config = function()
+					require("cmp-npm").setup({})
+				end,
+			},
 		},
 		config = function()
 			local cmp = require("cmp")
@@ -420,6 +435,7 @@ require("lazy").setup({
 					{ name = "luasnip", keyword_length = 3 },
 					{ name = "nvim_lsp_signature_help" },
 					{ name = "path" },
+					{ name = "npm", keyword_length = 4 },
 				}, {
 					{ name = "buffer" },
 				}),
@@ -637,9 +653,6 @@ require("lazy").setup({
 				javascript = { "prettierd", "prettier", stop_after_first = true },
 				lua = { "stylua" },
 				markdown = { "prettierd" },
-				python = { "black" },
-				cpp = { "clang-format" },
-				-- go = { "gofumpt" },
 			},
 		},
 	},
