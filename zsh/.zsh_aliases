@@ -4,16 +4,16 @@ alias ls='lsd'
 alias md='mkdir'
 alias rb='reboot'
 alias sn='shutdown now'
-alias vim='nvim'
+alias v='nvim'
 alias dev='cd ~/Dev'
 
 # Config Files
-alias zshrc='cd ~/.config/zsh/ && vim .zshrc'
-alias aliases='cd ~/.config/zsh && vim .aliases.zsh'
+alias zshrc='cd ~/.config/zsh/ && nvim .zshrc'
+alias aliases='cd ~/.dots/zsh && nvim .zsh_aliases'
 alias szsh='exec zsh'
-alias nvimc='cd ~/.config/nvim/ && vim init.lua'
-alias waybarc='cd ~/.config/waybar/ && vim config.jsonc'
-alias swayc='cd ~/.config/sway/ && vim config'
+alias nnvimc='cd ~/.config/nnvim/ && nvim init.lua'
+alias waybarc='cd ~/.config/waybar/ && nvim config.jsonc'
+alias swayc='cd ~/.config/sway/ && nvim config'
 
 # Network Manager
 alias wifi='nmtui'
@@ -59,4 +59,4 @@ alias q='exit'
 
 # Umuzi
 alias up='cd ~/Dev/work/projects'
-alias su='cd ~/Dev/work/umuzi/stand-up/ && vim .'
+alias su='cd ~/Dev/work/umuzi/stand-up/ && nvim .'
