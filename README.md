@@ -5,6 +5,9 @@ Preamble:
 This is mostly a note to self to remember the things I need to do to have a
 usable system/dev environment should I need to machine hop.
 
+> [!NOTE]
+> The [Arch wiki](https://wiki.archlinux.org/title/Main_page) is bae
+
 ## Essentials
 
 > [!WARNING]
