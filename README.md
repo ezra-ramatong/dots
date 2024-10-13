@@ -2,7 +2,7 @@
 
 Preamble:
 
-This is mostly a note to self to remember most things I need to do to have a
+This is mostly a note to self to remember the things I need to do to have a
 usable system/dev environment should I need to machine hop.
 
 ## Essentials
