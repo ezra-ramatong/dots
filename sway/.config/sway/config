@@ -6,6 +6,7 @@ include catppuccin-frappe
 
 # Start up
 exec mako
+exec gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Classic
 
 # ------------------------------------------------------------------------------ 
 # Display Config
@@ -29,6 +30,9 @@ output * bg ~/Pictures/wallpapers/frappe-arch.png fill
 
 # Font
 font pango:MartianMono Nerd Font 11
+
+# Cursor
+seat * xcursor_theme Bibata-Modern-Classic 24
 
 # Colours 
 # target                 title     bg    text   indicator  border
