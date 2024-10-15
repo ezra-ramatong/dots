@@ -318,18 +318,6 @@ require("lazy").setup({
 					},
 				},
 				ts_ls = {},
-				jsonls = {
-					settings = {
-						json = {
-							schemas = {
-								{
-									fileMatch = { "package.json" },
-									url = "https://json.schemastore.org/package.json",
-								},
-							},
-						},
-					},
-				},
 			}
 
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -403,14 +391,6 @@ require("lazy").setup({
 			},
 			"saadparwaiz1/cmp_luasnip",
 			"hrsh7th/cmp-nvim-lsp-signature-help",
-			{
-				"David-Kunz/cmp-npm",
-				dependencies = { "nvim-lua/plenary.nvim" },
-				ft = "json",
-				config = function()
-					require("cmp-npm").setup({})
-				end,
-			},
 		},
 		config = function()
 			local cmp = require("cmp")
@@ -435,7 +415,6 @@ require("lazy").setup({
 					{ name = "luasnip", keyword_length = 3 },
 					{ name = "nvim_lsp_signature_help" },
 					{ name = "path" },
-					{ name = "npm", keyword_length = 4 },
 				}, {
 					{ name = "buffer" },
 				}),
@@ -719,7 +698,7 @@ require("lazy").setup({
 
 			require("toggleterm").setup({
 				direction = "vertical",
-				size = 50,
+				size = 70,
 				hide_numbers = true,
 				shade_terminals = true,
 				shading_factor = 2,
