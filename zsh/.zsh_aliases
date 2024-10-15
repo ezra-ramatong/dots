@@ -4,14 +4,14 @@ alias ls='lsd'
 alias md='mkdir'
 alias rb='reboot'
 alias sn='shutdown now'
-alias v='nvim'
+alias vim='nvim'
 alias dev='cd ~/Dev'
 
 # Config Files
 alias zshrc='cd ~/.config/zsh/ && nvim .zshrc'
 alias aliases='cd ~/.dots/zsh && nvim .zsh_aliases'
 alias szsh='exec zsh'
-alias nnvimc='cd ~/.config/nnvim/ && nvim init.lua'
+alias nvimc='cd ~/.config/nvim/ && nvim init.lua'
 alias waybarc='cd ~/.config/waybar/ && nvim config.jsonc'
 alias swayc='cd ~/.config/sway/ && nvim config'
 
