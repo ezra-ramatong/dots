@@ -8,6 +8,7 @@ export VISUAL="$EDITOR"
 export TERMINAL="alacritty"
 export BROWSER="firefox-developer-edition"
 export GIT_EDITOR="$EDITOR"
+export ELECTRON_OZONE_PLATFORM_HINT="wayland"
 #export QT_QPA_PLATFORMTHEME="qt6ct"
 
 # PATH
