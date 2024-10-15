@@ -10,8 +10,8 @@ exec mako
 # ------------------------------------------------------------------------------ 
 # Display Config
 
-output eDP-1 scale 1.0
-output HDMI-A-1 scale 1.0 resolution 1920x1080
+output eDP-1 scale 1.0 pos 1920 0
+output HDMI-A-1 scale 1.0 resolution 1920x1080 pos 0 0
 
 # ------------------------------------------------------------------------------ 
 # Applications
