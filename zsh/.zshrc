@@ -1,4 +1,3 @@
-FPATH=~/.rbenv/completions:"$FPATH"
 autoload -Uz add-zsh-hook
 autoload -Uz compinit
 compinit
@@ -53,6 +52,3 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
-# Added by `rbenv init` on Sun Oct 13 05:20:07 PM SAST 2024
-eval "$(~/.rbenv/bin/rbenv init - --no-rehash zsh)"

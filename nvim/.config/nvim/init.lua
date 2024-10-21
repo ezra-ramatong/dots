@@ -84,10 +84,10 @@ map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move line down (visual)" })
 map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move line up (visual)" })
 
 -- Window navigation
---[[ map("n", "<C-h>", "<C-w>h", { silent = true, desc = "Left window navigation" })
+map("n", "<C-h>", "<C-w>h", { silent = true, desc = "Left window navigation" })
 map("n", "<C-j>", "<C-w>j", { silent = true, desc = "Down window navigation" })
 map("n", "<c-l>", "<c-w>l", { silent = true, desc = "Right window navigation" })
-map("n", "<C-k>", "<C-w>k", { silent = true, desc = "Up window navigation" }) ]]
+map("n", "<C-k>", "<C-w>k", { silent = true, desc = "Up window navigation" })
 
 -- Telescope
 map("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find for word under cursor" })
@@ -318,6 +318,9 @@ require("lazy").setup({
 					},
 				},
 				ts_ls = {},
+				gopls = {
+					gofumpt = true,
+				},
 			}
 
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -629,9 +632,10 @@ require("lazy").setup({
 				}
 			end,
 			formatters_by_ft = {
-				javascript = { "prettierd", "prettier", stop_after_first = true },
+				javascript = { "prettierd" },
 				lua = { "stylua" },
 				markdown = { "prettierd" },
+				go = { "gofumt" },
 			},
 		},
 	},
@@ -646,6 +650,7 @@ require("lazy").setup({
 				-- javascript = { "eslint_d" },
 				python = { "flake8" },
 				liquid = { "curlylint" },
+				go = { "golangcilint" },
 			}
 			vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
 				callback = function()
@@ -696,6 +701,8 @@ require("lazy").setup({
 				vim.api.nvim_buf_set_keymap(0, "t", "<C-l>", [[<C-\><C-n><C-W>l]], opts)
 			end
 
+			vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
+
 			require("toggleterm").setup({
 				direction = "vertical",
 				size = 70,
@@ -724,18 +731,18 @@ require("lazy").setup({
 			vim.keymap.set("n", "<leader>a", mark.add_file)
 			vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
 
-			vim.keymap.set("n", "<C-j>", function()
+			vim.keymap.set("n", "<C-9>", function()
 				ui.nav_file(1)
 			end)
-			vim.keymap.set("n", "<C-k>", function()
+			vim.keymap.set("n", "<C-0>", function()
 				ui.nav_file(2)
 			end)
-			vim.keymap.set("n", "<C-l>", function()
+			--[[ vim.keymap.set("n", "<C-l>", function()
 				ui.nav_file(3)
 			end)
 			vim.keymap.set("n", "<C-;>", function()
 				ui.nav_file(4)
-			end)
+			end) ]]
 		end,
 	},
 
