@@ -31,7 +31,8 @@
     "format": "{title}",
     "max-length": 50,
     "rewrite": {
-      "(.*) — Firefox Developer Edition": "Firefox"
+      "(.*) — Zen Browser": "Zen",
+      "(.*) - Nvim": "Neovim"
     }
   },
   "tray": {
