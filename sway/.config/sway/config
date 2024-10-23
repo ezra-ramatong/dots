@@ -20,7 +20,7 @@ output HDMI-A-1 scale 1.0 resolution 1920x1080
 
 set $terminal alacritty
 set $launcher fuzzel 
-set $browser firefox-developer-edition
+set $browser zen-browser
 set $docs zeal
 
 # ------------------------------------------------------------------------------ 
