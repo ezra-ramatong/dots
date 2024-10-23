@@ -7,6 +7,7 @@ include catppuccin-frappe
 # Start up
 exec mako
 exec gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Classic
+exec gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 # ------------------------------------------------------------------------------ 
 # Display Config
