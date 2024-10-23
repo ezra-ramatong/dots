@@ -46,6 +46,7 @@ map("n", "<leader>bs", "<cmd>BufferLinePick<cr>", { desc = "Pick buffer" })
 -- Close buffer
 map("n", "<leader>bc", "<cmd>bdelete!<cr>", { desc = "Buffer Close" })
 map("n", "<leader>bcc", "<cmd>BufferLinePickClose<cr>", { desc = "BufferLine Pick Close" })
+map("n", "<leader>bco", "<cmd>BufferLineCloseOthers<cr>", { desc = "BufferLine Close Others" })
 
 -- Telescope
 map("n", "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>", { desc = "Find all files" })
@@ -55,6 +56,7 @@ map("n", "<leader>fi", "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = 
 map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "Find word in workspace" })
 map("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Keymaps" })
 map("n", "<leader>fg", "<cmd>Telescope git_files show_untracked=true<cr>", { desc = "Find git files" })
+map("n", "<leader>fc", "<cmd>Telescope commands<cr>", { desc = "Find command history" })
 
 -- Quickfix list navigation
 map("n", "<leader>j", "<cmd>cnext<cr>zz", { desc = "Forward quickfix list" })
@@ -73,6 +75,7 @@ map("n", "<leader>gbc", "<cmd>Telescope git_bcommits<cr>", { desc = "Git commits
 map("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", { desc = "Git Branches" })
 map("n", "<leader>gbl", "<cmd>Git blame<cr>", { desc = "Git blame/Git blame range" })
 map("n", "<leader>gcl", "<cmd>Gclog<cr>", { desc = "Git log" })
+map("n", "<leader>gd", "<cmd>Gdiffsplit<cr>", { desc = "Git diff" })
 map("n", "<leader>gs", "<cmd>Telescope git_status<cr>", { desc = "Git status" })
 map("n", "<leader>gp", "<cmd>Git push<cr>", { desc = "Git push" })
 map("n", "<leader>g", "<cmd>G<cr>", { desc = "Git fugitive" })
