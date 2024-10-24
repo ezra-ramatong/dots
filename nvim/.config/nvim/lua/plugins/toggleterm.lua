@@ -17,8 +17,8 @@ return {
 		vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
 		require("toggleterm").setup({
-			direction = "horizontal",
-			size = 20,
+			direction = "vertical",
+			size = 60,
 			hide_numbers = true,
 			shade_terminals = true,
 			shading_factor = 2,
