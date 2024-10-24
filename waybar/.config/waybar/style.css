@@ -1,4 +1,4 @@
-@import "frappe.css";
+@import "onedark.css";
 
 * {
   font-family: MartianMono Nerd Font;
@@ -6,8 +6,8 @@
 }
 
 #waybar {
-  background: @crust;
-  color: @text;
+  background: transparent;
+  color: @magenta;
   margin: 5px 5px;
 }
 
@@ -21,18 +21,18 @@ button:hover {
 }
 
 #workspaces button {
-  color: @lavender;
+  color: @white;
   border-radius: 1rem;
   padding: 0 1rem;
 }
 
 #workspaces button:hover {
-  color: @sapphire;
+  color: @red;
   border-radius: 1rem;
 }
 
 #workspaces button.active {
-  color: @sky;
+  color: @blue;
   border-radius: 1rem;
 }
 
@@ -77,7 +77,7 @@ button:hover {
 }
 
 #pulseaudio {
-  color: @maroon;
+  color: @cyan;
   border-radius: 1rem 0px 0px 1rem;
   margin-left: 1rem;
 }
