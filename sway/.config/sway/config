@@ -27,7 +27,7 @@ set $docs zeal
 # Appearance 
 
 # Wallpaper 
-output * bg ~/Pictures/wallpapers/frappe-arch.png fill
+output * bg ~/Pictures/wallpapers/od_berlinetta.png fill
 
 # Font
 font pango:MartianMono Nerd Font 11
