@@ -1,4 +1,3 @@
-import = ["/home/ezra/.config/alacritty/onedark.toml"]
 
 [env]
 TERM = "xterm-256color"
@@ -6,7 +5,7 @@ TERM = "xterm-256color"
 [window]
 padding = {x = 20, y = 25}
 dynamic_padding = true
-opacity = 0.9
+opacity = 1.0
 
 [font]
 normal = { family = "MartianMono Nerd Font", style = "Regular" }
@@ -21,4 +20,7 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 
 [cursor]
 style = { shape = "Block", blinking = "Always" }
+
+[general]
+import = ["/home/ezra/.config/alacritty/onedark.toml"]
 
