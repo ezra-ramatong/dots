@@ -20,14 +20,14 @@ output HDMI-A-1 scale 1.0 resolution 1920x1080
 
 set $terminal alacritty
 set $launcher fuzzel 
-set $browser zen-browser
+set $browser firefox-developer-edition
 set $docs zeal
 
 # ------------------------------------------------------------------------------ 
 # Appearance 
 
 # Wallpaper 
-output * bg ~/Pictures/wallpapers/od_berlinetta.png fill
+output * bg ~/Pictures/wallpapers/one.png fill
 
 # Font
 font pango:MartianMono Nerd Font 11

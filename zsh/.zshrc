@@ -1,3 +1,5 @@
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz add-zsh-hook
 autoload -Uz compinit
 compinit
@@ -51,6 +53,10 @@ source $HOME/.zsh_aliases
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#eval "$(~/.rbenv/bin/rbenv init - --no-rehash zsh)"
+# asdf
+ . "$HOME/.asdf/asdf.sh"
 
 source /home/ezra/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /home/ezra/zsh-autosuggestions/zsh-autosuggestions.zsh

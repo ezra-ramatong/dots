@@ -49,7 +49,7 @@ map("n", "<leader>bcc", "<cmd>BufferLinePickClose<cr>", { desc = "BufferLine Pic
 map("n", "<leader>bco", "<cmd>BufferLineCloseOthers<cr>", { desc = "BufferLine Close Others" })
 
 -- Telescope
-map("n", "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>", { desc = "Find all files" })
+map("n", "<leader>ff", "<cmd>Telescope find_files hidden=true no_ignore=true<cr>", { desc = "Find all files" })
 map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Find Help" })
 map("n", "<leader>fm", "<cmd>Telescope man_pages<cr>", { desc = "Find Man Pages" })
 map("n", "<leader>fi", "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "Find in buffer" })

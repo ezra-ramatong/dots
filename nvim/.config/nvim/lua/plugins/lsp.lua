@@ -15,6 +15,8 @@ return {
 			gopls = {
 				gofumpt = true,
 			},
+			clangd = {},
+			solargraph = {},
 		}
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()

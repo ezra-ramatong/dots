@@ -6,6 +6,8 @@ TERM = "xterm-256color"
 padding = {x = 20, y = 25}
 dynamic_padding = true
 opacity = 1.0
+decorations = "None"
+startup_mode = "Maximized"
 
 [font]
 normal = { family = "MartianMono Nerd Font", style = "Regular" }

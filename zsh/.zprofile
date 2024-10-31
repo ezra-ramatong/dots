@@ -1,0 +1,2 @@
+
+#~/.rbenv/bin/rbenv init 
