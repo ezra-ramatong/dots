@@ -17,6 +17,7 @@ return {
 			},
 			clangd = {},
 			solargraph = {},
+			pylsp = {},
 		}
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
