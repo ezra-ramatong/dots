@@ -16,7 +16,6 @@ return {
 				gofumpt = true,
 			},
 			clangd = {},
-			solargraph = {},
 			pylsp = {},
 		}
 
