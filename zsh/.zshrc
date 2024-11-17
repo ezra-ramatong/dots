@@ -33,7 +33,7 @@ zstyle :compinstall filename '$HOME/.zcompdump'
 # Options
 autoload -Uz colors && colors
 setopt PROMPT_SUBST
-PROMPT='%F{blue}Command::%f '
+PROMPT='%F{yellow}Command::%f '
 RPROMPT='%F{green}%~%f %F{red}${vcs_info_msg_0_}%f'
 HISTFILE=$HOME/.histfile
 HISTSIZE=100000

@@ -8,7 +8,7 @@ alias vim='nvim'
 alias dev='cd ~/Dev'
 
 # Config Files
-alias zshrc='cd ~/.config/zsh/ && nvim .zshrc'
+alias zshrc='cd ~/.dots/zsh/ && nvim .zshrc'
 alias aliases='cd ~/.dots/zsh && nvim .zsh_aliases'
 alias szsh='exec zsh'
 alias nvimc='cd ~/.config/nvim/ && nvim init.lua'
