@@ -5,9 +5,9 @@ return {
 	config = function()
 		require("catppuccin").setup({
 			highlight_overrides = {
-				frappe = function(frappe)
+				mocha = function(mocha)
 					return {
-						BufferLineFill = { bg = frappe.base },
+						BufferLineFill = { bg = mocha.base },
 					}
 				end,
 			},

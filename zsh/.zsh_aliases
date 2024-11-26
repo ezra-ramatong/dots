@@ -1,6 +1,7 @@
 # General
 alias la='lsd -la'
 alias ls='lsd'
+alias lst="lsd --tree --all"
 alias md='mkdir'
 alias rb='reboot'
 alias sn='shutdown now'
@@ -15,6 +16,7 @@ alias nvimc='cd ~/.config/nvim/ && nvim init.lua'
 alias waybarc='cd ~/.config/waybar/ && nvim config.jsonc'
 alias swayc='cd ~/.config/sway/ && nvim config'
 alias dots='cd ~/.dots/'
+alias alaconf='cd ~/.config/alacritty/ && nvim alacritty.toml'
 
 # Network Manager
 alias wifi='nmtui'
@@ -61,3 +63,6 @@ alias q='exit'
 # Umuzi
 alias up='cd ~/Dev/work/projects'
 alias su='cd ~/Dev/work/umuzi/stand-up/ && nvim .'
+
+# Zellij
+alias zl='zellij'

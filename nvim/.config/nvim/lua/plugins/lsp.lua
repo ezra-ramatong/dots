@@ -11,6 +11,9 @@ return {
 					},
 				},
 			},
+			cssls = {},
+			html = {},
+			emmet_ls = {},
 			ts_ls = {},
 			gopls = {
 				gofumpt = true,

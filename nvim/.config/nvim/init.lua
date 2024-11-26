@@ -10,4 +10,4 @@ for _, source in ipairs({
 	end
 end
 
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[colorscheme onedark]])
