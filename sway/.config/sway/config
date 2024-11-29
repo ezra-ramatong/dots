@@ -8,6 +8,7 @@ include catppuccin-frappe
 exec mako
 exec gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Classic
 exec gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+exec /usr/lib/polkit-kde-authentication-agent-1
 
 # ------------------------------------------------------------------------------ 
 # Display Config
@@ -15,11 +16,15 @@ exec gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 output eDP-1 scale 1.0 
 output HDMI-A-1 scale 1.0 resolution 1920x1080 
 
+# Clamshell Mode
+set $laptop eDP-1
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
 # ------------------------------------------------------------------------------ 
 # Applications
 
 set $terminal alacritty
-set $launcher fuzzel 
+set $launcher wmenu-run -f "MartianMono NF Cond 12" -l 5 -N "#282c34" -S "#61afef" -i
 set $browser firefox-developer-edition
 set $docs zeal
 
@@ -56,7 +61,17 @@ smart_borders on
 
 # Status bar
 bar {
-    swaybar_command waybar
+  position bottom
+  colors {
+    status_command ~/.config/sway/bar.sh
+    background #282c34
+    statusline #abb2bf
+    # Outline, Background, Foreground
+    inactive_workspace #282c34 #282c34 #abb2bf
+    focused_workspace #282c34 #61afef #222222
+  }
+  font pango:MartianMono NF Cond 12
+  mode hide
 }
 
 # ------------------------------------------------------------------------------ 
