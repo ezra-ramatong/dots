@@ -56,6 +56,11 @@ alias gpo='git push origin'
 alias gposu='git push origin --set-upstream'
 alias grmr='git rm -r'
 alias gs='git status'
+alias gsw='git switch'
+alias gswc='git switch -c'
+
+# Docker
+alias dcu='docker compose up'
 
 # Custom
 alias q='exit'

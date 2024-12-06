@@ -12,8 +12,11 @@ export ELECTRON_OZONE_PLATFORM_HINT="wayland"
 #export QT_QPA_PLATFORMTHEME="qt6ct"
 export GOPATH="$HOME/go"
 export GOBIN=""
+export GDK_BACKEND=wayland gimp
+
 
 # PATH
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH="$PATH:$HOME/go/bin"
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
