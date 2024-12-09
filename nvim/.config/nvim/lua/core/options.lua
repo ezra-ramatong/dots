@@ -8,6 +8,8 @@ o.showmode = false
 o.cursorline = true
 o.cursorlineopt = "number"
 
+o.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor20-Cursor"
+
 -- Indenting
 o.expandtab = true
 o.shiftwidth = 2
@@ -47,4 +49,3 @@ g.netrw_banner = 0
 g.netrw_keepdir = 0
 g.netrw_menu = 0
 g.netrw_winsize = 20
-

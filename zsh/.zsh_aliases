@@ -16,7 +16,7 @@ alias nvimc='cd ~/.config/nvim/ && nvim init.lua'
 alias waybarc='cd ~/.config/waybar/ && nvim config.jsonc'
 alias swayc='cd ~/.config/sway/ && nvim config'
 alias dots='cd ~/.dots/'
-alias alaconf='cd ~/.config/alacritty/ && nvim alacritty.toml'
+alias alac='cd ~/.config/alacritty/ && nvim alacritty.toml'
 
 # Network Manager
 alias wifi='nmtui'

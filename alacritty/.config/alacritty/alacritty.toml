@@ -5,13 +5,13 @@ TERM = "xterm-256color"
 [window]
 padding = {x = 20, y = 25}
 dynamic_padding = true
-opacity = 0.8
+opacity = 1
 decorations = "None"
 startup_mode = "Maximized"
 
 [font]
-normal = { family = "MartianMono Nerd Font", style = "Condensed Medium" }
-bold = { family = "MartianMono Nerd Font", style = "Condensed Bold" }
+normal = { family = "RobotoMono Nerd Font", style = "Regular" }
+bold = { family = "RobotoMono Nerd Font", style = "Bold" }
 # italic = { family = "MartianMono Nerd Font", style = "Italic" }
 # bold_italic = { family = "MartianMono Nerd Font", style = "Bold Italic" }
 size = 14.0
@@ -20,8 +20,8 @@ size = 14.0
 save_to_clipboard = true
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 
-[cursor]
-style = { shape = "Block", blinking = "Always" }
+# [cursor]
+# style = { shape = "Block", blinking = "Always" }
 
 [general]
-import = ["/home/ezra/.config/alacritty/onedark.toml"]
+import = ["~/.config/alacritty/themes/rose_pine_dawn.toml"]
