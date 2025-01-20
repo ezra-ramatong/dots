@@ -232,7 +232,7 @@ plugins {
  
 simplified_ui true
  
- theme "dayfox"
+ theme "catppuccin-frappe"
  
 default_mode "locked"
  
