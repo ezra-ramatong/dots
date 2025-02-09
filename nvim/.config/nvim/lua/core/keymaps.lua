@@ -79,3 +79,11 @@ map("n", "<leader>gd", "<cmd>Gdiffsplit<cr>", { desc = "Git diff" })
 map("n", "<leader>gs", "<cmd>Telescope git_status<cr>", { desc = "Git status" })
 map("n", "<leader>gp", "<cmd>Git push<cr>", { desc = "Git push" })
 map("n", "<leader>g", "<cmd>G<cr>", { desc = "Git fugitive" })
+
+-- DAP
+map("n", "<leader>db", "<cmd>DapToggleBreakpoint<cr>", { desc = "Add breakpoint at line" })
+map("n", "<leader>dr", "<cmd>DapContinue<cr>", { desc = "Start or continue the debugger" })
+
+-- Compile C++ files
+map("n", "<leader>cc", ":!g++ -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -g % -o %:r && ./%:r<CR>",
+  { desc = "Compile C++ File", noremap = true, silent = true })

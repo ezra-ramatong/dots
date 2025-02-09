@@ -27,6 +27,7 @@ return {
 
     -- LSP Mappings
     local on_attach = function(_, bufnr)
+      -- vim.lsp.inlay_hint.enable()
       local map = function(keys, func, desc)
         if desc then
           desc = "LSP: " .. desc

@@ -33,7 +33,7 @@ zstyle :compinstall filename '$HOME/.zcompdump'
 # Options
 autoload -Uz colors && colors
 setopt PROMPT_SUBST
-PROMPT='%F{white}󰜎 󰜎 󰜎 %f '
+PROMPT='%F{yellow}󰜎 󰜎 󰜎 %f '
 RPROMPT='%F{blue}%~%f %F{yellow}${vcs_info_msg_0_}%f'
 HISTFILE=$HOME/.histfile
 HISTSIZE=100000
@@ -42,6 +42,7 @@ setopt autocd
 setopt auto_menu
 setopt menu_complete
 unsetopt beep
+setopt EXTENDED_GLOB
 bindkey -v
 
 # Aliases

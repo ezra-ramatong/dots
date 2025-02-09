@@ -4,14 +4,14 @@ TERM = "xterm-256color"
 [window]
 padding = {x = 20, y = 25}
 dynamic_padding = true
-opacity = 1
+opacity = 0.9
 decorations = "None"
 startup_mode = "Maximized"
 
 [font]
 normal = { family = "MartianMono Nerd Font", style = "Regular" }
 bold = { family = "MartianMono Nerd Font", style = "Bold" }
-size = 13.0
+size = 12.0
 
 [selection]
 save_to_clipboard = true
@@ -21,4 +21,4 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 # style = { shape = "Block", blinking = "Always" }
 
 [general]
-import = ["~/.config/alacritty/themes/catppuccin_frappe.toml"]
+import = ["~/.config/alacritty/themes/one_dark.toml"]

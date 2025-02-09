@@ -232,7 +232,7 @@ plugins {
  
 simplified_ui true
  
- theme "catppuccin-frappe"
+ theme "onedark"
  
 default_mode "locked"
  
