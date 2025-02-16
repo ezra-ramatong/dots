@@ -229,21 +229,21 @@ plugins {
         welcome_screen true
     }
 }
- 
+
 simplified_ui true
  
- theme "onedark"
+ theme "catppuccin-mocha"
  
 default_mode "locked"
  
 default_shell "zsh"
  
-default_layout "compact"
+layout_dir "/tmp"
  
+default_layout "compact"
 // The folder in which Zellij will look for layouts
 // (Requires restart)
-// 
-// layout_dir "/tmp"
+
  
  on_force_close "quit"
 

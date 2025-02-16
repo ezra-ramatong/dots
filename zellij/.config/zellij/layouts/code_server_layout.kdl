@@ -1,0 +1,9 @@
+layout {
+    tab name="code" {
+        pane
+    }
+    tab name="server" {
+        pane
+    }
+}
+

@@ -5,13 +5,13 @@ return {
   config = function()
     require("catppuccin").setup({
       highlight_overrides = {
-        frappe = function(frappe)
+        mocha = function(mocha)
           return {
-            BufferLineFill = { bg = frappe.base },
+            BufferLineFill = { bg = mocha.base },
           }
         end,
       },
     })
-    -- vim.cmd([[colorscheme catppuccin-frappe]])
+    vim.cmd([[colorscheme catppuccin-mocha]])
   end,
 }

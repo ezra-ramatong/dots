@@ -69,5 +69,12 @@ alias q='exit'
 alias up='cd ~/Dev/work/projects'
 alias su='cd ~/Dev/work/umuzi/stand-up/ && nvim .'
 
+# Vite setup
+alias vc='npm create vite@latest'
+
+# NPM
+alias nrd='npm run dev'
+alias nrb='npm run build'
+
 # Zellij
 alias zl='zellij'
