@@ -17,6 +17,7 @@ export GDK_BACKEND=wayland gimp
 
 # PATH
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH="$PATH:$HOME/go/bin"
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib

@@ -76,5 +76,8 @@ alias vc='npm create vite@latest'
 alias nrd='npm run dev'
 alias nrb='npm run build'
 
+# P%.js
+alias cp5='git clone git@github.com:ezra-ramatong/p5-starter .'
+
 # Zellij
 alias zl='zellij'

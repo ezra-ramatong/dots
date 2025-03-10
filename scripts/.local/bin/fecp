@@ -1,0 +1,61 @@
+#!/bin/bash
+
+TEMPLATE_DIR="$HOME/Dev/project-templates"  # Adjust this if needed
+
+echo "Welcome to Frontend Create Project! 🚀"
+
+if ! command -v npm &> /dev/null; then
+    echo "❌ npm is not installed! Please install Node.js and try again."
+    exit 1
+fi
+
+# Ask for project name
+read -p "Enter project name: " PROJECT_NAME
+
+# Ask for template
+echo "Select a template:"
+echo "1) P5 Starter"
+echo "2) Vanilla"
+read -p "Enter the number: " TEMPLATE_CHOICE
+
+# Determine template path
+case $TEMPLATE_CHOICE in
+    1) TEMPLATE="$TEMPLATE_DIR/p5-starter" ;;
+    2) TEMPLATE="$TEMPLATE_DIR/vanilla" ;;
+    *) echo "Invalid choice. Exiting." && exit 1 ;;
+esac
+
+# Make sure template exists
+if [ ! -d "$TEMPLATE" ]; then
+    echo "Template not found: $TEMPLATE"
+    exit 1
+fi
+
+# Copy template
+cp -r "$TEMPLATE" "$PROJECT_NAME"
+
+# Move into project folder
+cd "$PROJECT_NAME" || exit
+
+# Initialize git
+cat > package.json <<EOF
+{
+  "name": "$PROJECT_NAME",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {}
+}
+EOF
+
+git init
+git branch -M main
+
+npm install --save-dev vite sass
+echo "✅ Project '$PROJECT_NAME' created from '$TEMPLATE' and ready to go! 🎉"
+
