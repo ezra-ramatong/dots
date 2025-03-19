@@ -8,6 +8,7 @@ return {
       -- python = { "flake8" },
       liquid = { "curlylint" },
       -- go = { "golangcilint" },
+      cmake = { "cmakelint" }
     }
     vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
       callback = function()

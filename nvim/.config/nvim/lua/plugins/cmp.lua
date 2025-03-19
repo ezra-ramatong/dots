@@ -106,8 +106,8 @@ return {
         ["<Up>"] = cmp.mapping.select_prev_item(select_opts),
         ["<Down>"] = cmp.mapping.select_next_item(select_opts),
 
-        ["<C-p>"] = cmp.mapping.select_prev_item(select_opts),
-        ["<C-n>"] = cmp.mapping.select_next_item(select_opts),
+        ["<C-k>"] = cmp.mapping.select_prev_item(select_opts),
+        ["<C-j>"] = cmp.mapping.select_next_item(select_opts),
 
         ["<C-u>"] = cmp.mapping.scroll_docs(-4),
         ["<C-d>"] = cmp.mapping.scroll_docs(4),

@@ -25,8 +25,8 @@ return {
       lua = { "stylua" },
       markdown = { "prettierd" },
       go = { "gofumt" },
-      --[[ c = { "clang-format" },
-			cpp = { "clang-format" }, ]]
+      c = { "clang-format" },
+      cpp = { "clang-format" },
     },
   },
 }
