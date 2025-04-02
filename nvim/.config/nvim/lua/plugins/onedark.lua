@@ -22,14 +22,11 @@ return {
         },
       },
       highlights = {
-        -- BufferLineFill = { bg = colors.black },
-        BufferLineFill = { bg = "#000000" },
-        -- NormalFloat = { bg = "${telescope_prompt}" },
-        NormalFloat = { bg = "#000000" },
+        BufferLineFill = { bg = colors.black },
+        NormalFloat = { bg = "${telescope_prompt}" },
         Pmenu = { bg = "${telescope_prompt}" },
         --NormalFloat = { bg = colors.black },
-        -- FloatBorder = { fg = colors.green, bg = colors.black },
-        FloatBorder = { fg = colors.green, bg = "#000000" },
+        FloatBorder = { fg = colors.green, bg = colors.black },
         TelescopeBorder = {
           fg = "${telescope_results}",
           bg = "${telescope_results}",
@@ -63,6 +60,6 @@ return {
         TelescopePreviewBorder = { fg = "${telescope_preview}", bg = "${telescope_preview}" },
       },
     })
-    -- vim.cmd([[colorscheme onedark_dark]])
+    vim.cmd([[colorscheme onedark]])
   end,
 }
