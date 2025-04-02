@@ -9,8 +9,8 @@ decorations = "None"
 startup_mode = "Maximized"
 
 [font]
-normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
-bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+normal = { family = "MartianMono Nerd Font", style = "Regular" }
+bold = { family = "MartianMono Nerd Font", style = "Bold" }
 size = 12.0
 
 [selection]
@@ -21,4 +21,4 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 # style = { shape = "Block", blinking = "Always" }
 
 [general]
-import = ["~/.config/alacritty/themes/monokai_charcoal.toml"]
+import = ["~/.config/alacritty/themes/monokai_pro.toml"]

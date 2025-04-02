@@ -16,10 +16,10 @@ return {
       },
       override = function(c)
         return {
-          BufferLineFill = { bg = "#000000" },
+          --[[ BufferLineFill = { bg = "#000000" },
           FloatBorder = { fg = "#000000", bg = "#000000" },
           Pmenu = { bg = "#000000", fg = "#000000" },
-          NormalFloat = { bg = "#000000", fg = "#000000" },
+          NormalFloat = { bg = "#000000", fg = "#000000" }, ]]
           IndentBlanklineChar = { fg = c.base.dimmed4 },
           NeoTreeStatusLine = { link = "StatusLine" },
         }
@@ -28,7 +28,7 @@ return {
         return {
           --     dark2 = "#101014",
           --     dark1 = "#16161E",
-          background = "#000000",
+          -- background = "#000000",
           --     text = "#C0CAF5",
           --     accent1 = "#f7768e",
           --     accent2 = "#7aa2f7",
@@ -44,6 +44,6 @@ return {
         }
       end,
     })
-    -- vim.cmd([[colorscheme monokai-pro]])
+    vim.cmd([[colorscheme monokai-pro]])
   end,
 }

@@ -232,7 +232,7 @@ plugins {
 
 simplified_ui true
  
- theme "catppuccin-mocha"
+ theme "monokai"
  
 default_mode "locked"
  
