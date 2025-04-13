@@ -13,12 +13,14 @@ export ELECTRON_OZONE_PLATFORM_HINT="wayland"
 export GOPATH="$HOME/go"
 export GOBIN=""
 export GDK_BACKEND=wayland gimp
+# export JAVA_HOME="/usr/lib/jvm/java-21-openjdk/bin"
 
 
 # PATH
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:/usr/local/bin"
-export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH="$PATH:$HOME/JUCE/extras/Projucer/Builds/LinuxMakefile/build/"
 export PATH="$PATH:$HOME/go/bin"
+# export PATH="$PATH:/usr/lib/jvm/java-21-openjdk/bin"
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib

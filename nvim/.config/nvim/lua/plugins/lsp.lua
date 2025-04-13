@@ -15,12 +15,12 @@ return {
       html = {},
       emmet_ls = {},
       ts_ls = {},
-      --[[ gopls = {
-				gofumpt = true,
-			}, ]]
+      gopls = {
+        gofumpt = true,
+      },
       clangd = {},
       pylsp = {},
-      astro = {}
+      astro = {},
     }
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()

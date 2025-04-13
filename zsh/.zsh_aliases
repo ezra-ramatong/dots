@@ -61,6 +61,7 @@ alias gswc='git switch -c'
 
 # Docker
 alias dcu='docker compose up'
+alias dcd='docker compose down'
 
 # Custom
 alias q='exit'

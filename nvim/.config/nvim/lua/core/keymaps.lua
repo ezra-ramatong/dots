@@ -87,3 +87,6 @@ map("n", "<leader>dr", "<cmd>DapContinue<cr>", { desc = "Start or continue the d
 -- Compile C++ files
 map("n", "<leader>cc", ":!g++ -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -g % -o %:r && ./%:r<CR>",
   { desc = "Compile C++ File", noremap = true, silent = true })
+map("n", "<leader>m", ":make -C build<CR>", { desc = "Make", noremap = true, silent = true })
+map("n", "<leader>mr", ":make run -C build<CR>", { desc = "Make run", noremap = true, silent = true })
+map("n", "<leader>mc", ":make clean -C build<CR>", { desc = "Make clean", noremap = true, silent = true })

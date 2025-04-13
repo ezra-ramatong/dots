@@ -72,6 +72,8 @@ return {
         },
       }
 
+      dap.configurations.c = dap.configurations.cpp
+
       dap.configurations.javascript = {
         {
           type = "pwa-node",
