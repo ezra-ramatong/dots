@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+  echo "Usage: p5new <project-name>"
+  return 1
+fi
+
+gh repo create "$1" --template=ezra-ramatong/p5js-starter --public
+
+git clone "git@github.com:ezra-ramatong/$1.git"
+
+cd "$1" || return
+
+echo "💫 Project '$1' created and cloned. Ready to sketch!"
+
