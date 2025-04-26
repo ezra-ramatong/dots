@@ -5,7 +5,6 @@ return {
   config = function()
     local color = require("onedarkpro.helpers")
     local colors = color.get_colors()
-
     require("onedarkpro").setup({
       colors = {
         dark = {
@@ -60,6 +59,6 @@ return {
         TelescopePreviewBorder = { fg = "${telescope_preview}", bg = "${telescope_preview}" },
       },
     })
-    vim.cmd([[colorscheme onedark]])
+    vim.cmd([[colorscheme onedark_dark]])
   end,
 }
