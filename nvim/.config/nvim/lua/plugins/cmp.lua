@@ -20,8 +20,8 @@ return {
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
-    -- require("luasnip.loaders.from_vscode").lazy_load()
-    require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/lua/luasnippets" })
+    require("luasnip.loaders.from_vscode").lazy_load()
+    -- require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/lua/luasnippets" })
 
     local select_opts = { behavior = cmp.SelectBehavior.Select }
     local get_icon = require("core.utils").get_icon
