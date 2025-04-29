@@ -24,3 +24,5 @@ export PATH="$PATH:$HOME/JUCE/extras/Projucer/Builds/LinuxMakefile/build/"
 export PATH="$PATH:$HOME/go/bin"
 # export PATH="$PATH:/usr/lib/jvm/java-21-openjdk/bin"
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+# export BUN_INSTALL="$HOME/.bun"
+# export PATH="$BUN_INSTALL/bin:$PATH"
