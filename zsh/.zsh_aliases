@@ -72,13 +72,27 @@ alias su='cd ~/Dev/work/umuzi/stand-up/ && nvim .'
 
 # Vite setup
 alias vc='npm create vite@latest'
+alias vcjs='cp -r ~/Dev/templates/vite-vanilla-js/ .'
+alias vcts='cp -r ~/Dev/templates/vite-vanilla-ts/ .'
 
 # NPM
 alias nrd='npm run dev'
 alias nrb='npm run build'
 
+# PNPM
+alias pncv='pnpm create vite'
+alias pnrd='pnpm run dev'
+alias pnrb='pnpm run build'
+
 # P5.js
 # alias cp5='gh repo create my-new-sketch --template=ezra-ramatong/p5js-starter --public'
+alias p5init='cp -r ~/Dev/templates/p5/ .'
+
+# Ollama
+alias chat="ollama run mistral"
+
+# HTTP Server
+alias pyserver="python3 -m http.server"
 
 # Zellij
 alias zl='zellij'
