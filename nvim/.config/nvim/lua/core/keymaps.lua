@@ -90,3 +90,9 @@ map("n", "<leader>cc", ":!g++ -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -g % 
 map("n", "<leader>m", ":make -C build<CR>", { desc = "Make", noremap = true, silent = true })
 map("n", "<leader>mr", ":make run -C build<CR>", { desc = "Make run", noremap = true, silent = true })
 map("n", "<leader>mc", ":make clean -C build<CR>", { desc = "Make clean", noremap = true, silent = true })
+
+-- NPM
+map("n", "<leader>nf", "<cmd>!npm run format<cr>", { desc = "npm run format" })
+map("n", "<leader>nl", "<cmd>!npm run lint<cr>", { desc = "npm run lint" })
+map("n", "<leader>nt", "<cmd>!npm test<cr>", { desc = "npm test" })
+map("n", "<leader>nb", "<cmd>!npm run build<cr>", { desc = "npm run build" })

@@ -22,6 +22,7 @@ return {
     end,
     formatters_by_ft = {
       javascript = { "prettierd" },
+      javascriptreact = { "prettierd" },
       typescript = { "prettierd" },
       lua = { "stylua" },
       markdown = { "prettierd" },
