@@ -15,13 +15,16 @@ return {
       html = {},
       emmet_ls = {},
       ts_ls = {},
-      --[[ gopls = {
+      gopls = {
         gofumpt = true,
-      }, ]]
+      },
       -- clangd = {},
       -- pylsp = {},
       -- astro = {},
+      jdtls = {},
     }
+
+    require("java").setup()
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)

@@ -86,7 +86,7 @@ alias pnrb='pnpm run build'
 
 # P5.js
 # alias cp5='gh repo create my-new-sketch --template=ezra-ramatong/p5js-starter --public'
-alias p5init='cp -r ~/Dev/templates/p5/ .'
+alias p5='cp -r ~/Dev/templates/p5/ .'
 
 # Ollama
 alias chat="ollama run mistral"
@@ -96,3 +96,16 @@ alias pyserver="python3 -m http.server"
 
 # Zellij
 alias zl='zellij'
+
+# Java
+# --- Raw Java aliases ---
+
+alias jjc='javac $JAVA_SRC_DIR/$JAVA_MAIN_CLASS.java'
+alias jj='java -cp $JAVA_SRC_DIR $JAVA_MAIN_CLASS'
+alias jjr='jjc && jj'
+
+# --- Gradle project aliases ---
+alias jgr='./gradlew run'
+alias jgb='./gradlew build'
+alias jgt='./gradlew test'
+
