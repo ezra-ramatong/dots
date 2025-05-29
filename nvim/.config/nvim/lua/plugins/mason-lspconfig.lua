@@ -14,6 +14,45 @@ return {
     },
   },
   config = function()
+    local inlay_hints_config = {
+      includeInlayParameterNameHints = "all",
+      includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+      includeInlayFunctionParameterTypeHints = true,
+      includeInlayVariableTypeHints = true,
+      includeInlayPropertyDeclarationTypeHints = true,
+      includeInlayFunctionLikeReturnTypeHints = true,
+      includeInlayEnumMemberValueHints = true,
+    }
+
+    local servers = {
+      cssls = {},
+      html = {},
+      ts_ls = {
+        settings = {
+          javascript = { inlayHints = inlay_hints_config },
+          typescript = { inlayHints = inlay_hints_config },
+        },
+      },
+      lua_ls = {
+        settings = {
+          Lua = {
+            diagnostics = { globals = { "vim" } },
+          },
+        },
+      },
+    }
+
+    local inlay_hint_enabled = {}
+
+    function ToggleInlayHints()
+      local bufnr = vim.api.nvim_get_current_buf()
+      inlay_hint_enabled[bufnr] = not inlay_hint_enabled[bufnr]
+      vim.lsp.inlay_hint.enable(inlay_hint_enabled[bufnr], bufnr)
+
+      local state = inlay_hint_enabled[bufnr] and "enabled" or "disabled"
+      vim.notify("Inlay hints " .. state)
+    end
+
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     local lsp_signature = require("lsp_signature")
 
@@ -39,6 +78,7 @@ return {
       map("<leader>ld", vim.diagnostic.setqflist, "List diagnostics")
       map("<leader>lf", vim.lsp.buf.format, "Format buffer")
       map("<leader>li", "<cmd>LspInfo<cr>", "LSP information")
+      map("<leader>lih", ToggleInlayHints, "Toggle inlay hints")
       map("<leader>lr", vim.lsp.buf.rename, "Rename current symbol")
       map("<leader>ls", require("telescope.builtin").lsp_document_symbols, "Search document symbols")
       map("<leader>lw", require("telescope.builtin").lsp_workspace_symbols, "Search workspace symbols")
@@ -60,61 +100,15 @@ return {
     end
 
     vim.lsp.handlers["textDocument/hover"] =
-        vim.lsp.with(vim.lsp.handlers.hover, { border = border("FloatBoarder") })
+        vim.lsp.with(vim.lsp.handlers.hover, { border = border("FloatBorder") })
     vim.lsp.handlers["textDocument/signatureHelp"] =
-        vim.lsp.with(vim.lsp.handlers.signature_help, { border = border("FloatBoarder") })
+        vim.lsp.with(vim.lsp.handlers.signature_help, { border = border("FloatBorder") })
 
-
-    vim.lsp.config.html = {
-      on_attach = on_attach,
-      capabilities = capabilities,
-      --[[ settings = {
-
-      } ]]
-    }
-
-    vim.lsp.config.cssls = {
-      on_attach = on_attach,
-      capabilities = capabilities,
-      --[[ settings = {
-
-      } ]]
-    }
-
-    -- Typescript Server
-    local inlay_hints_config = {
-      includeInlayParameterNameHints = "all",
-      includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-      includeInlayFunctionParameterTypeHints = true,
-      includeInlayVariableTypeHints = true,
-      includeInlayPropertyDeclarationTypeHints = true,
-      includeInlayFunctionLikeReturnTypeHints = true,
-      includeInlayEnumMemberValueHints = true,
-    }
-
-    vim.lsp.config.ts_ls = {
-      on_attach = on_attach,
-      capabilities = capabilities,
-      settings = {
-        javascript = { inlayHints = inlay_hints_config },
-        typescript = { inlayHints = inlay_hints_config },
-      },
-    }
-
-    -- Lua
-    vim.lsp.config.lua_ls = {
-      on_attach = on_attach,
-      capabilities = capabilities,
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = { "vim" },
-          },
-        },
-      },
-    }
-
-
+    for name, config in pairs(servers) do
+      config.on_attach = on_attach
+      config.capabilities = capabilities
+      vim.lsp.config[name] = config
+    end
 
     local x = vim.diagnostic.severity
 

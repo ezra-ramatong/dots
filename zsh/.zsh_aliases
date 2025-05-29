@@ -78,6 +78,7 @@ alias vcts='cp -r ~/Dev/templates/vite-vanilla-ts/ .'
 # NPM
 alias nrd='npm run dev'
 alias nrb='npm run build'
+alias nt='npm test'
 
 # PNPM
 alias pncv='pnpm create vite'
