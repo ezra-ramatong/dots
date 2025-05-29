@@ -46,7 +46,7 @@ return {
         }
       }
 
-      dap.adapters.java = function(callback)
+      --[[ dap.adapters.java = function(callback)
         -- FIXME:
         -- Here a function needs to trigger the `vscode.java.startDebugSession` LSP command
         -- The response to the command must be the `port` used below
@@ -55,7 +55,7 @@ return {
           host = '127.0.0.1',
           port = port,
         })
-      end
+      end ]]
 
       -- Configurations
       dap.configurations.cpp = {
@@ -95,7 +95,7 @@ return {
         },
       }
 
-      dap.configurations.java = {
+      --[[ dap.configurations.java = {
         {
           type = 'java',
           request = 'attach',
@@ -103,7 +103,7 @@ return {
           hostName = "127.0.0.1",
           port = 5005,
         },
-      }
+      } ]]
     end,
   },
 }
