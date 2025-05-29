@@ -46,6 +46,25 @@ return {
       map("]d", vim.diagnostic.goto_next, "Next diagnostic")
     end
 
+    local function border(hl_name)
+      return {
+        { "┌", hl_name },
+        { "─", hl_name },
+        { "┐", hl_name },
+        { "│", hl_name },
+        { "┘", hl_name },
+        { "─", hl_name },
+        { "└", hl_name },
+        { "│", hl_name },
+      }
+    end
+
+    vim.lsp.handlers["textDocument/hover"] =
+        vim.lsp.with(vim.lsp.handlers.hover, { border = border("FloatBoarder") })
+    vim.lsp.handlers["textDocument/signatureHelp"] =
+        vim.lsp.with(vim.lsp.handlers.signature_help, { border = border("FloatBoarder") })
+
+
     vim.lsp.config.html = {
       on_attach = on_attach,
       capabilities = capabilities,
@@ -96,23 +115,6 @@ return {
     }
 
 
-    local function border(hl_name)
-      return {
-        { "┌", hl_name },
-        { "─", hl_name },
-        { "┐", hl_name },
-        { "│", hl_name },
-        { "┘", hl_name },
-        { "─", hl_name },
-        { "└", hl_name },
-        { "│", hl_name },
-      }
-    end
-
-    vim.lsp.handlers["textDocument/hover"] =
-        vim.lsp.with(vim.lsp.handlers.hover, { border = border("LspInfoBorder") })
-    vim.lsp.handlers["textDocument/signatureHelp"] =
-        vim.lsp.with(vim.lsp.handlers.signature_help, { border = border("LspInfoBorder") })
 
     local x = vim.diagnostic.severity
 

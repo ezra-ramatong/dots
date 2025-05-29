@@ -172,14 +172,14 @@ return {
       },
       window = {
         completion = {
-          border = border("LspInfoBorder"),
+          border = border("FloatBorder"),
           winhighlight = "Normal:Normal,CursorLine:Visual,Search:PmenuSel",
           scrollbar = false,
           side_padding = 1,
           col_offset = -1,
         },
         documentation = {
-          border = border("LspInfoBorder"),
+          border = border("FloatBorder"),
           winhighlight = "Normal:Normal",
         },
       },
