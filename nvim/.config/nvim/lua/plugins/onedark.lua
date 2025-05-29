@@ -23,6 +23,7 @@ return {
       highlights = {
         BufferLineFill = { bg = colors.black },
         NormalFloat = { bg = "${telescope_prompt}" },
+        LspInlayHint = { bg = "${telescope_results}", fg = "#666666" },
         Pmenu = { bg = "${telescope_prompt}" },
         --NormalFloat = { bg = colors.black },
         FloatBorder = { fg = colors.green, bg = colors.black },

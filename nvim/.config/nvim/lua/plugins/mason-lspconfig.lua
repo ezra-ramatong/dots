@@ -1,35 +1,28 @@
 return {
-  "neovim/nvim-lspconfig",
-  lazy = true,
+  "mason-org/mason-lspconfig.nvim",
+  dependencies = {
+    { "mason-org/mason.nvim", opts = {} },
+    "neovim/nvim-lspconfig",
+    "ray-x/lsp_signature.nvim",
+  },
+  opts = {
+    ensure_installed = {
+      "html",
+      "cssls",
+      "ts_ls",
+      "lua_ls",
+    },
+  },
   config = function()
-    -- Servers
-    local servers = {
-      lua_ls = {
-        Lua = {
-          diagnostics = {
-            globals = { "vim" },
-          },
-        },
-      },
-      cssls = {},
-      html = {},
-      emmet_ls = {},
-      ts_ls = {},
-      gopls = {
-        gofumpt = true,
-      },
-      -- clangd = {},
-      -- pylsp = {},
-      -- astro = {},
-    }
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    local lsp_signature = require("lsp_signature")
 
+    local on_attach = function(client, bufnr)
+      vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
+      if client.server_capabilities.inlayHintProvider then vim.lsp.inlay_hint.enable(true) end
+      lsp_signature.on_attach({}, bufnr)
 
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-
-    -- LSP Mappings
-    local on_attach = function(_, bufnr)
-      -- vim.lsp.inlay_hint.enable()
+      -- LSP Mappings
       local map = function(keys, func, desc)
         if desc then
           desc = "LSP: " .. desc
@@ -53,20 +46,55 @@ return {
       map("]d", vim.diagnostic.goto_next, "Next diagnostic")
     end
 
-    local mason_lspconfig = require("mason-lspconfig")
-    mason_lspconfig.setup({
-      ensure_installed = vim.tbl_keys(servers),
-    })
+    vim.lsp.config.html = {
+      on_attach = on_attach,
+      capabilities = capabilities,
+      --[[ settings = {
 
-    mason_lspconfig.setup_handlers({
-      function(server_name)
-        require("lspconfig")[server_name].setup({
-          capabilities = capabilities,
-          on_attach = on_attach,
-          settings = servers[server_name],
-        })
-      end,
-    })
+      } ]]
+    }
+
+    vim.lsp.config.cssls = {
+      on_attach = on_attach,
+      capabilities = capabilities,
+      --[[ settings = {
+
+      } ]]
+    }
+
+    -- Typescript Server
+    local inlay_hints_config = {
+      includeInlayParameterNameHints = "all",
+      includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+      includeInlayFunctionParameterTypeHints = true,
+      includeInlayVariableTypeHints = true,
+      includeInlayPropertyDeclarationTypeHints = true,
+      includeInlayFunctionLikeReturnTypeHints = true,
+      includeInlayEnumMemberValueHints = true,
+    }
+
+    vim.lsp.config.ts_ls = {
+      on_attach = on_attach,
+      capabilities = capabilities,
+      settings = {
+        javascript = { inlayHints = inlay_hints_config },
+        typescript = { inlayHints = inlay_hints_config },
+      },
+    }
+
+    -- Lua
+    vim.lsp.config.lua_ls = {
+      on_attach = on_attach,
+      capabilities = capabilities,
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = { "vim" },
+          },
+        },
+      },
+    }
+
 
     local function border(hl_name)
       return {
@@ -96,5 +124,8 @@ return {
     }
 
     vim.diagnostic.config(config)
+
+    require("mason").setup()
+    require("mason-lspconfig").setup()
   end, -- config end
 }
