@@ -21,7 +21,7 @@ return {
         },
       },
       highlights = {
-        BufferLineFill = { bg = colors.black },
+        BufferLineFill = { bg = "#000000" },
         NormalFloat = { bg = "${telescope_prompt}" },
         LspInlayHint = { bg = "${telescope_results}", fg = "#666666" },
         Pmenu = { bg = "${telescope_prompt}" },
@@ -60,6 +60,6 @@ return {
         TelescopePreviewBorder = { fg = "${telescope_preview}", bg = "${telescope_preview}" },
       },
     })
-    vim.cmd([[colorscheme onedark_vivid]])
+    vim.cmd([[colorscheme onedark_dark]])
   end,
 }

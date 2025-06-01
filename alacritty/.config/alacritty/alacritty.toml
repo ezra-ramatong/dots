@@ -21,4 +21,4 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 # style = { shape = "Block", blinking = "Always" }
 
 [general]
-import = ["~/.config/alacritty/themes/onedark.toml"]
+import = ["~/.config/alacritty/themes/one_dark.toml"]

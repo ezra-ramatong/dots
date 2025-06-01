@@ -42,23 +42,13 @@ return {
       },
     }
 
-    local inlay_hint_enabled = {}
-
-    function ToggleInlayHints()
-      local bufnr = vim.api.nvim_get_current_buf()
-      inlay_hint_enabled[bufnr] = not inlay_hint_enabled[bufnr]
-      vim.lsp.inlay_hint.enable(inlay_hint_enabled[bufnr], bufnr)
-
-      local state = inlay_hint_enabled[bufnr] and "enabled" or "disabled"
-      vim.notify("Inlay hints " .. state)
-    end
 
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     local lsp_signature = require("lsp_signature")
 
     local on_attach = function(client, bufnr)
       vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
-      if client.server_capabilities.inlayHintProvider then vim.lsp.inlay_hint.enable(true) end
+      -- if client.server_capabilities.inlayHintProvider then vim.lsp.inlay_hint.enable(true) end
       lsp_signature.on_attach({}, bufnr)
 
       -- LSP Mappings
@@ -78,7 +68,8 @@ return {
       map("<leader>ld", vim.diagnostic.setqflist, "List diagnostics")
       map("<leader>lf", vim.lsp.buf.format, "Format buffer")
       map("<leader>li", "<cmd>LspInfo<cr>", "LSP information")
-      map("<leader>lih", ToggleInlayHints, "Toggle inlay hints")
+      map("<leader>lih", "<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<cr>",
+        "Toggle inlay hints")
       map("<leader>lr", vim.lsp.buf.rename, "Rename current symbol")
       map("<leader>ls", require("telescope.builtin").lsp_document_symbols, "Search document symbols")
       map("<leader>lw", require("telescope.builtin").lsp_workspace_symbols, "Search workspace symbols")
