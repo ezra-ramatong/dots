@@ -59,6 +59,9 @@ alias gs='git status'
 alias gsw='git switch'
 alias gswc='git switch -c'
 
+# Lazygit
+alias lg='lazygit'
+
 # Docker
 alias dcu='docker compose up'
 alias dcd='docker compose down'
