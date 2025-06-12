@@ -42,8 +42,10 @@ o.timeoutlen = 400
 o.undofile = true
 
 o.updatetime = 250
-opt.whichwrap:append "<>[]hl"
+opt.whichwrap:append("<>[]hl")
 o.termguicolors = true
+-- o.winborder = "rounded"
+-- o.winblend = 30
 
 -- disable some default providers
 g.loaded_node_provider = 0

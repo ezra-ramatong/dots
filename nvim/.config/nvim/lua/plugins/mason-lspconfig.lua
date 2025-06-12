@@ -71,24 +71,6 @@ return {
 			map("]d", vim.diagnostic.goto_next, "Next diagnostic")
 		end
 
-		local function border(hl_name)
-			return {
-				{ "┌", hl_name },
-				{ "─", hl_name },
-				{ "┐", hl_name },
-				{ "│", hl_name },
-				{ "┘", hl_name },
-				{ "─", hl_name },
-				{ "└", hl_name },
-				{ "│", hl_name },
-			}
-		end
-
-		vim.lsp.handlers["textDocument/hover"] =
-			vim.lsp.with(vim.lsp.handlers.hover, { border = border("FloatBorder") })
-		vim.lsp.handlers["textDocument/signatureHelp"] =
-			vim.lsp.with(vim.lsp.handlers.signature_help, { border = border("FloatBorder") })
-
 		for name, config in pairs(servers) do
 			config.on_attach = on_attach
 			config.capabilities = capabilities
