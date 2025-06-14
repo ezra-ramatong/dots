@@ -16,12 +16,12 @@ return {
 		},
 		"saadparwaiz1/cmp_luasnip",
 		"hrsh7th/cmp-nvim-lsp-signature-help",
-		{
-			"zbirenbaum/copilot-cmp",
-			config = function()
-				require("copilot_cmp").setup()
-			end,
-		},
+		-- {
+		-- 	"zbirenbaum/copilot-cmp",
+		-- 	config = function()
+		-- 		require("copilot_cmp").setup()
+		-- 	end,
+		-- },
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -103,7 +103,7 @@ return {
 				end,
 			},
 			sources = cmp.config.sources({
-				{ name = "copilot", group_index = 2 },
+				-- { name = "copilot", group_index = 2 },
 				{ name = "nvim_lsp", priority = 1000 },
 				{ name = "luasnip", keyword_length = 3 },
 				{ name = "nvim_lsp_signature_help" },
