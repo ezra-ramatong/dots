@@ -16,6 +16,9 @@ export GDK_BACKEND=wayland gimp
 # export JAVA_HOME="/usr/lib/jvm/java-21-openjdk/bin"
 export JAVA_SRC_DIR="src"
 export JAVA_MAIN_CLASS="Main"
+export PGDATA=/var/lib/postgres/data
+export PGADMIN_DEFAULT_EMAIL='ezra@lol.com'
+export PGADMIN_DEFAULT_PASSWORD='1234'
 
 
 

@@ -3,10 +3,12 @@ alias la='lsd -la'
 alias ls='lsd'
 alias lst="lsd --tree --all"
 alias md='mkdir'
+alias mdp='mkdir -p'
 alias rb='reboot'
 alias sn='shutdown now'
 alias vim='nvim'
 alias dev='cd ~/Dev'
+alias tree='lsd --tree'
 
 # Config Files
 alias zshrc='cd ~/.dots/zsh/ && nvim .zshrc'
@@ -71,7 +73,7 @@ alias q='exit'
 
 # Umuzi
 alias up='cd ~/Dev/work/projects'
-alias su='cd ~/Dev/work/umuzi/stand-up/ && nvim .'
+alias stu='cd ~/Dev/work/umuzi/stand-up/ && nvim .'
 
 # Vite setup
 alias vc='npm create vite@latest'
