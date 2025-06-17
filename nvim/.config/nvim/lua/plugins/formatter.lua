@@ -24,6 +24,7 @@ return {
 			javascript = { "prettierd" },
 			javascriptreact = { "prettierd" },
 			typescript = { "prettierd" },
+			vue = { "prettierd" },
 			lua = { "stylua" },
 			markdown = { "prettierd" },
 			go = { "gofumpt" },

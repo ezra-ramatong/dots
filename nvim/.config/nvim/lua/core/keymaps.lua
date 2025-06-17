@@ -85,12 +85,12 @@ map("n", "<leader>db", "<cmd>DapToggleBreakpoint<cr>", { desc = "Add breakpoint 
 map("n", "<leader>dr", "<cmd>DapContinue<cr>", { desc = "Start or continue the debugger" })
 
 -- Compile C++ files
-map(
+--[[ map(
 	"n",
 	"<leader>cc",
 	":!g++ -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -g % -o %:r && ./%:r<CR>",
 	{ desc = "Compile C++ File", noremap = true, silent = true }
-)
+) ]]
 map("n", "<leader>m", ":make -C build<CR>", { desc = "Make", noremap = true, silent = true })
 map("n", "<leader>mr", ":make run -C build<CR>", { desc = "Make run", noremap = true, silent = true })
 map("n", "<leader>mc", ":make clean -C build<CR>", { desc = "Make clean", noremap = true, silent = true })
@@ -106,3 +106,8 @@ map("n", "<leader>nr", "<cmd>!node %<cr>", { desc = "Run current script with Nod
 map("n", "<leader>gor", "<cmd>!go run %<cr>", { desc = "Run current Go file" })
 map("n", "<leader>gob", "<cmd>!go build %<cr>", { desc = "Build current Go file" })
 map("n", "<leader>got", "<cmd>!go test<cr>", { desc = "Go test" })
+
+-- CodeCompanion
+map("n", "<leader>cct", "<cmd>CodeCompanionChat toggle<cr>", { desc = "CodeCompanionChat Toggle" })
+map("n", "<leader>cc", "<cmd>CodeCompanionChat<cr>", { desc = "CodeCompanionChat" })
+map("n", "<leader>cca", "<cmd>CodeCompanionActions<cr>", { desc = "CodeCompanionActions" })

@@ -19,10 +19,30 @@ return {
 		local servers = {
 			cssls = {},
 			html = {},
+			vue_ls = {},
 			ts_ls = {
+				init_options = {
+					plugins = {
+						{
+							name = "@vue/typescript-plugin",
+							location = vim.fn.stdpath("data")
+								.. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
+							languages = { "vue" },
+						},
+					},
+				},
 				settings = {
 					javascript = { inlayHints = inlay_hints_config },
 					typescript = { inlayHints = inlay_hints_config },
+				},
+				filetypes = {
+					"javascript",
+					"javascriptreact",
+					"javascript.jsx",
+					"typescript",
+					"typescriptreact",
+					"typescript.tsx",
+					"vue",
 				},
 			},
 			lua_ls = {
@@ -92,6 +112,11 @@ return {
 
 		require("mason").setup()
 		require("mason-lspconfig").setup({
+			--[[ automatic_enable = {
+				exclude = {
+					"vue_ls",
+				},
+			}, ]]
 			ensure_installed = {
 				-- Language Servers
 				"html",

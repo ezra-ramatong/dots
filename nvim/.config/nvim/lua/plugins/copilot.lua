@@ -1,4 +1,4 @@
---[[ return {
+return {
 	"zbirenbaum/copilot.lua",
 	cmd = "Copilot",
 	event = "InsertEnter",
@@ -8,4 +8,4 @@
 			panel = { enabled = false },
 		})
 	end,
-} ]]
+}
