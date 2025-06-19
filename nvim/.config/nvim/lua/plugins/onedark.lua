@@ -51,6 +51,6 @@ return {
 				TelescopePreviewBorder = { fg = "${telescope_preview}", bg = "${telescope_preview}" },
 			},
 		})
-		vim.cmd([[colorscheme onedark]])
+		vim.cmd([[colorscheme vaporwave]])
 	end,
 }
