@@ -1,0 +1,11 @@
+ffl() {
+  local dir
+  dir=$(fd --type d --hidden --exclude .git --exclude node_modules --exclude .cache --exclude .npm --exclude .mozilla --exclude go/pkg/ --exclude .cargo --exclude .rustup --exclude .nvm| fzf --height=70% --border=rounded )
+  [[ -n "$dir" ]] && cd "$dir"
+}
+
+ff() {
+  local dir
+  dir=$(fd --type d --hidden --exclude .git --exclude node_modules --exclude .cache --exclude .npm --exclude .mozilla --exclude go/pkg/ --exclude .cargo --exclude .rustup --exclude .nvm . "$HOME"| fzf --height=70% --border=rounded )
+  [[ -n "$dir" ]] && cd "$dir"
+}

@@ -45,6 +45,9 @@ unsetopt beep
 setopt EXTENDED_GLOB
 bindkey -v
 
+# Functions
+source $HOME/.zsh_functions # fuzzy finder
+
 # Aliases
 source $HOME/.zsh_aliases
 

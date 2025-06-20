@@ -24,7 +24,7 @@ alias alac='cd ~/.config/alacritty/ && nvim alacritty.toml'
 alias wifi='nmtui'
 
 # fzf
-alias ff='cd ~ && ~/.local/bin/explorer.sh'
+# alias ff='cd ~ && ~/.local/bin/explorer.sh'
 alias sd='cd ~ && cd $(fd --type d --hidden --exclude .git --exclude node_modules --exclude .cache --exclude .npm --exclude .mozilla --exclude go/pkg/ --exclude .cargo --exclude .rustup --exclude .nvm| fzf --height=70% --border=rounded )'
 
 # File explorer

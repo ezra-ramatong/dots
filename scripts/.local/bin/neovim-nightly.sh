@@ -1,1 +1,1 @@
-curl -s https://api.github.com/repos/neovim/neovim/releases/tags/nightly | grep "browser_download_url.*nvim-linux-x86_64.tar.gz" | cut -d : -f 2,3 | tr -d \" | wget -i - -O ~/.src/nvim-linux-x86_64.tar.gz
+curl -s https://api.github.com/repos/neovim/neovim/releases/tags/nightly | grep "browser_download_url.*nvim-linux-x86_64.tar.gz" | cut -d : -f 2,3 | tr -d \" | wget -i - -O ~/Downloads/nvim-linux-x86_64.tar.gz

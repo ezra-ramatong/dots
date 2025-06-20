@@ -1,9 +1,0 @@
-#!/bin/bash
-
-read -p "Folder name: " FOLDER_NAME
-cp -r ~/Dev/project-templates/raylib-cpp/ "$FOLDER_NAME"
-
-# Replace the project name in CMakeLists.txt
-CMAKELIST_PATH="$FOLDER_NAME/CMakeLists.txt"
-sed -i "s/^project(.*)/project(${FOLDER_NAME} VERSION 1.0)/" "$CMAKELIST_PATH"
-
