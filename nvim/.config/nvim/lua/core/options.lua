@@ -58,3 +58,5 @@ g.netrw_banner = 0
 g.netrw_keepdir = 0
 g.netrw_menu = 0
 g.netrw_winsize = 20
+g.loaded_netrwPlugin = 1
+g.loaded_netrw = 1
