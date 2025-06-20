@@ -6,6 +6,25 @@ return {
 		"ray-x/lsp_signature.nvim",
 	},
 	config = function()
+		require("mason").setup()
+		require("mason-lspconfig").setup({
+			--[[ automatic_enable = {
+				exclude = {
+					"vue_ls",
+				},
+			}, ]]
+			ensure_installed = {
+				-- Language Servers
+				"html",
+				"emmet_ls",
+				"cssls",
+				"ts_ls",
+				"lua_ls",
+				"gopls",
+				"vue_ls",
+				"bashls",
+			},
+		})
 		local inlay_hints_config = {
 			includeInlayParameterNameHints = "all",
 			includeInlayParameterNameHintsWhenArgumentMatchesName = false,
@@ -16,10 +35,7 @@ return {
 			includeInlayEnumMemberValueHints = true,
 		}
 
-		local servers = {
-			cssls = {},
-			html = {},
-			vue_ls = {},
+		local server_settings = {
 			ts_ls = {
 				init_options = {
 					plugins = {
@@ -52,8 +68,6 @@ return {
 					},
 				},
 			},
-			emmet_ls = {},
-			tailwindcss = {},
 		}
 
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -93,7 +107,7 @@ return {
 			map("]d", vim.diagnostic.goto_next, "Next diagnostic")
 		end
 
-		for name, config in pairs(servers) do
+		for name, config in pairs(server_settings) do
 			config.on_attach = on_attach
 			config.capabilities = capabilities
 			vim.lsp.config[name] = config
@@ -109,22 +123,5 @@ return {
 		}
 
 		vim.diagnostic.config(config)
-
-		require("mason").setup()
-		require("mason-lspconfig").setup({
-			--[[ automatic_enable = {
-				exclude = {
-					"vue_ls",
-				},
-			}, ]]
-			ensure_installed = {
-				-- Language Servers
-				"html",
-				"cssls",
-				"ts_ls",
-				"lua_ls",
-				"gopls",
-			},
-		})
 	end, -- config end
 }
