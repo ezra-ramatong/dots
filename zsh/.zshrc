@@ -46,7 +46,7 @@ setopt EXTENDED_GLOB
 bindkey -v
 
 # Functions
-source $HOME/.zsh_functions # fuzzy finder
+source $HOME/.zsh_functions 
 
 # Aliases
 source $HOME/.zsh_aliases
@@ -59,9 +59,6 @@ export NVM_DIR="$HOME/.nvm"
 # bun completions
 [ -s "/home/ezra/.bun/_bun" ] && source "/home/ezra/.bun/_bun"
 
-source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 # pnpm
 export PNPM_HOME="/home/ezra/.local/share/pnpm"
 case ":$PATH:" in
@@ -69,3 +66,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+source ~/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
