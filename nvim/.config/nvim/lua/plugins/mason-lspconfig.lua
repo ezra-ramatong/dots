@@ -68,6 +68,11 @@ return {
 					},
 				},
 			},
+			gopls = {
+				settings = {
+					gofumpt = true,
+				},
+			},
 		}
 
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()

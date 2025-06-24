@@ -61,6 +61,7 @@ map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "Find word in wo
 map("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Keymaps" })
 map("n", "<leader>fg", "<cmd>Telescope git_files show_untracked=true<cr>", { desc = "Find git files" })
 map("n", "<leader>fc", "<cmd>Telescope commands<cr>", { desc = "Find command history" })
+map("n", "<leader>tc", "<cmd>Telescope colorscheme<cr>", { desc = "Select colorscheme" })
 
 -- Quickfix list navigation
 map("n", "<leader>j", "<cmd>cnext<cr>zz", { desc = "Forward quickfix list" })

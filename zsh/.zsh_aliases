@@ -8,6 +8,7 @@ alias rb='reboot'
 alias sn='shutdown now'
 alias vim='nvim'
 alias dev='cd ~/Dev'
+alias dp='cd ~/Dev/projects/'
 alias tree='lsd --tree'
 
 # Config Files
@@ -103,15 +104,8 @@ alias pyserver="python3 -m http.server"
 # Zellij
 alias zl='zellij'
 
-# Java
-# --- Raw Java aliases ---
+# Go
+alias gomi="go mod init"
 
-alias jjc='javac $JAVA_SRC_DIR/$JAVA_MAIN_CLASS.java'
-alias jj='java -cp $JAVA_SRC_DIR $JAVA_MAIN_CLASS'
-alias jjr='jjc && jj'
-
-# --- Gradle project aliases ---
-alias jgr='./gradlew run'
-alias jgb='./gradlew build'
-alias jgt='./gradlew test'
-
+# XDG-Open
+alias xo="xdg-open"
