@@ -9,3 +9,77 @@ ff() {
   dir=$(fd --type d --hidden --exclude .git --exclude node_modules --exclude .cache --exclude .npm --exclude .mozilla --exclude go/pkg/ --exclude .cargo --exclude .rustup --exclude .nvm . "$HOME"| fzf --height=70% --border=rounded )
   [[ -n "$dir" ]] && cd "$dir"
 }
+
+# Ollama
+model="gemma3:1b"
+# Use any model
+#olmp() {
+#    local model="${1:-gemma3:1b}"
+#    local prompt="${2:-}"
+#    
+#    if [ -n "$prompt" ]; then
+#        echo "$prompt" | ollama run "$MODEL" | glow -
+#    else
+#        echo "Usage: ollama-pretty [model] 'your prompt'"
+#    fi
+#}
+
+# daily driver
+olm() {
+    local prompt="${1:-}"
+    
+    if [ -n "$prompt" ]; then
+        echo "$prompt" | ollama run "$model" | glow -
+    else
+        echo "Usage: olm 'your prompt'"
+    fi
+}
+
+# save to md
+olms() {
+    local prompt="${2:-}"
+    local filename="${3:-$(date +%Y%m%d_%H%M%S)_ollama.md}"
+    
+    if [ -n "$prompt" ]; then
+        echo "# Query: $prompt" > "$filename"
+        echo "" >> "$filename"
+        echo "$prompt" | ollama run "$model" >> "$filename"
+        echo "Saved to: $filename"
+        glow "$filename"  # Show it pretty too
+    fi
+}
+
+# Interactive mode that saves everything
+olmc() {
+    # local model="${1:-gemma2:1b}"
+    mkdir -p ~/chats
+    local session_file="$HOME/chats/chat_$(date +%Y%m%d_%H%M%S).md"
+
+    # Set up trap to save on interrupt
+    trap "echo ''; echo 'Session saved to: $session_file'; exit 0" INT
+    
+    echo "# Chat Session - $(date)" > "$session_file"
+    echo "Model: $model" >> "$session_file"
+    echo "" >> "$session_file"
+    
+    while true; do
+      echo -n "Me($USER): "
+        read -r prompt
+        if [ "$prompt" = "exit" ]; then
+          echo "Exiting chat..."
+          break
+        fi
+
+        local timestamp=$(date '+%H:%M:%S')
+        
+        echo "## Me ($USER) [$timestamp]" >> "$session_file"
+        echo "$prompt" >> "$session_file"
+        echo "" >> "$session_file"
+        echo "## Assistant [$timestamp]" >> "$session_file"
+        
+        echo "$prompt" | ollama run "$model" | tee -a "$session_file" | glow -
+        echo "" >> "$session_file"
+    done
+    
+    echo "Session saved to: $session_file"
+}

@@ -10,6 +10,11 @@ o.cursorlineopt = "number"
 
 o.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor20-Cursor"
 
+o.colorcolumn = "100"
+--[[ o.textwidth = 100
+o.wrap = true -- Enable line wrapping
+o.linebreak = true
+ ]]
 -- Indenting
 o.expandtab = true
 o.shiftwidth = 2

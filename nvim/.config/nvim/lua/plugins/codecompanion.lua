@@ -14,8 +14,8 @@ return {
 			lazy = false,
 			opts = {
 				preview = {
-					filetypes = { "markdown", "codecompanion" },
-					ignore_buftypes = {},
+					filetypes = { "codecompanion" },
+					ignore_buftypes = { "markdown" },
 				},
 			},
 		},

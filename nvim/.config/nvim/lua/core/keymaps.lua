@@ -115,4 +115,5 @@ map("n", "<leader>got", "<cmd>!go test<cr>", { desc = "Go test" })
 -- CodeCompanion
 map("n", "<leader>cct", "<cmd>CodeCompanionChat toggle<cr>", { desc = "CodeCompanionChat Toggle" })
 map("n", "<leader>cc", "<cmd>CodeCompanionChat<cr>", { desc = "CodeCompanionChat" })
+map("n", "<leader>cco", "<cmd>CodeCompanionChat ollama<cr>", { desc = "CodeCompanionChat using Ollama" })
 map("n", "<leader>cca", "<cmd>CodeCompanionActions<cr>", { desc = "CodeCompanionActions" })

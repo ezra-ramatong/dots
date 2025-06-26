@@ -96,7 +96,12 @@ alias pnrb='pnpm run build'
 alias p5='cp -r ~/Dev/templates/p5/ .'
 
 # Ollama
-alias chat="ollama run mistral"
+GEMMA3="gemma3:1b"
+# MISTRAL="mistral"
+alias chat="ollama run $GEMMA3"
+
+# Open WebUI
+alias owu="docker run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --name open-webui --restart always ghcr.io/open-webui/open-webui:main"
 
 # HTTP Server
 alias pyserver="python3 -m http.server"
