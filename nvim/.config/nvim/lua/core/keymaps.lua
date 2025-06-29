@@ -39,8 +39,7 @@ map("n", "<leader>e", "<cmd>Lex<cr>", { desc = "Open Netrw" })
 map("n", "<leader>ef", "<cmd>Lex %:p:h<cr>", { desc = "Open Netrw in directory of current file" }) ]]
 
 -- Oil (File Explorer)
-map("n", "ee", "<CMD>Oil --float %:p:h<CR>", { desc = "Open current directory" })
-map("n", "e", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
+map("n", "<leader>e", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
 
 -- Navigate buffers
 map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })

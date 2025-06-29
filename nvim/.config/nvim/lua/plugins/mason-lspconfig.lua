@@ -23,6 +23,8 @@ return {
 				"gopls",
 				"vue_ls",
 				"bashls",
+				"astro",
+				"mdx_analyzer",
 			},
 		})
 		local inlay_hints_config = {
@@ -45,6 +47,13 @@ return {
 								.. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
 							languages = { "vue" },
 						},
+						{
+							name = "@mdx-js/typescript-plugin",
+							enableForWorkspaceTypeScriptVersions = true,
+							languages = {
+								"mdx",
+							},
+						},
 					},
 				},
 				settings = {
@@ -59,6 +68,7 @@ return {
 					"typescriptreact",
 					"typescript.tsx",
 					"vue",
+					"mdx",
 				},
 			},
 			lua_ls = {
@@ -71,6 +81,14 @@ return {
 			gopls = {
 				settings = {
 					gofumpt = true,
+				},
+			},
+			mdx_analyzer = {
+				init_options = {
+					typescript = {
+						enabled = true,
+						tsdk = vim.fn.expand("~/.nvm/versions/node/v22.16.0/lib/node_modules/typescript/lib"),
+					},
 				},
 			},
 		}

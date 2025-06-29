@@ -10,16 +10,6 @@ return {
 			ft = { "markdown", "codecompanion" },
 		}, ]]
 		{
-			"OXY2DEV/markview.nvim",
-			lazy = false,
-			opts = {
-				preview = {
-					filetypes = { "codecompanion" },
-					ignore_buftypes = { "markdown" },
-				},
-			},
-		},
-		{
 			"echasnovski/mini.diff",
 			config = function()
 				local diff = require("mini.diff")
