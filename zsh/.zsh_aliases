@@ -114,3 +114,6 @@ alias gomi="go mod init"
 
 # XDG-Open
 alias xo="xdg-open"
+alias ytm="xdg-open https://music.youtube.com &"
+alias mdn="xdg-open https://developer.mozilla.org/en-US/ &"
+alias github="xdg-open https://github.com/ezra-ramatong/ &"

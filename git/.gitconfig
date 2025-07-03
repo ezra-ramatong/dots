@@ -1,6 +1,7 @@
 [user]
   name = Ezra Ramatong
   email = mail.ezra@proton.me
+	signingkey = 554AC8545223094D0C524D2CD62716ADFF69C32C
 
 [column]
   ui = auto
@@ -35,6 +36,7 @@
 
 [commit]
   verbose = true
+	gpgsign = true
 
 [core]
   excludesfile = ~/.gitignore

@@ -47,13 +47,6 @@ return {
 								.. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
 							languages = { "vue" },
 						},
-						{
-							name = "@mdx-js/typescript-plugin",
-							enableForWorkspaceTypeScriptVersions = true,
-							languages = {
-								"mdx",
-							},
-						},
 					},
 				},
 				settings = {
