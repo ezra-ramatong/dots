@@ -27,16 +27,26 @@ alias wifi='nmtui'
 
 # fzf
 alias fe='fzf | xargs -r $EDITOR'
-ffl() {
+_ff_common() {
+  local search_path="${1:-.}" 
   local dir
-  dir=$(fd --type d --hidden --exclude .git --exclude node_modules --exclude .cache --exclude .npm --exclude .mozilla --exclude go/pkg/ --exclude .cargo --exclude .rustup --exclude .nvm| fzf --height=70% --border=rounded )
+  dir=$(fd --type d --hidden \
+           --exclude .git \
+           --exclude node_modules \
+           --exclude .cache \
+           --exclude .npm \
+           --exclude .mozilla \
+           --exclude go/pkg/ \
+           --exclude .cargo \
+           --exclude .rustup \
+           --exclude .nvm \
+           . "$search_path" | \
+         fzf --height=70% --border=rounded)
   [[ -n "$dir" ]] && cd "$dir"
 }
-ff() {
-  local dir
-  dir=$(fd --type d --hidden --exclude .git --exclude node_modules --exclude .cache --exclude .npm --exclude .mozilla --exclude go/pkg/ --exclude .cargo --exclude .rustup --exclude .nvm . "$HOME"| fzf --height=70% --border=rounded )
-  [[ -n "$dir" ]] && cd "$dir"
-}
+ffl() { _ff_common "."; }
+ff()  { _ff_common "$HOME"; }
+
 alias sd='cd ~ && cd $(fd --type d --hidden --exclude .git --exclude node_modules --exclude .cache --exclude .npm --exclude .mozilla --exclude go/pkg/ --exclude .cargo --exclude .rustup --exclude .nvm| fzf --height=70% --border=rounded )'
 
 # File explorer
