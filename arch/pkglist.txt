@@ -97,6 +97,7 @@ inxi
 iptables-nft
 iwd
 jfsutils
+jq
 lazygit
 less
 libdvdcss
