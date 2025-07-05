@@ -6,7 +6,7 @@ alias md='mkdir'
 alias mdp='mkdir -p'
 alias rb='reboot'
 alias sn='shutdown now'
-alias vim='nvim'
+alias v='nvim'
 alias dev='cd ~/Dev'
 alias dp='cd ~/Dev/projects/'
 alias tree='lsd --tree'
@@ -25,6 +25,7 @@ alias alac='cd ~/.config/alacritty/ && nvim alacritty.toml'
 alias wifi='nmtui'
 
 # fzf
+alias fe='fzf | xargs -r $EDITOR'
 # alias ff='cd ~ && ~/.local/bin/explorer.sh'
 alias sd='cd ~ && cd $(fd --type d --hidden --exclude .git --exclude node_modules --exclude .cache --exclude .npm --exclude .mozilla --exclude go/pkg/ --exclude .cargo --exclude .rustup --exclude .nvm| fzf --height=70% --border=rounded )'
 
@@ -37,6 +38,8 @@ alias rn='ranger'
 alias pac='sudo pacman -S'
 alias pacrs='sudo pacman -Rs'
 alias pacu='sudo pacman -Syu'
+alias pacbll='pacman -Qq | fzf --preview "pacman -Qil {}" --layout=reverse --bind "enter:execute(pacman -Qil {} | less)"'
+alias pacbrl='pacman -Slq | fzf --preview "pacman -Si {}" --layout=reverse'
 
 # Yay
 alias yayu='yay -Syu'
