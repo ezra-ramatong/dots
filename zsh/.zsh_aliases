@@ -6,7 +6,8 @@ alias md='mkdir'
 alias mdp='mkdir -p'
 alias rb='reboot'
 alias sn='shutdown now'
-alias v='nvim'
+alias vim='nvim'
+alias v='vim'
 alias dev='cd ~/Dev'
 alias dp='cd ~/Dev/projects/'
 alias tree='lsd --tree'
@@ -26,7 +27,16 @@ alias wifi='nmtui'
 
 # fzf
 alias fe='fzf | xargs -r $EDITOR'
-# alias ff='cd ~ && ~/.local/bin/explorer.sh'
+ffl() {
+  local dir
+  dir=$(fd --type d --hidden --exclude .git --exclude node_modules --exclude .cache --exclude .npm --exclude .mozilla --exclude go/pkg/ --exclude .cargo --exclude .rustup --exclude .nvm| fzf --height=70% --border=rounded )
+  [[ -n "$dir" ]] && cd "$dir"
+}
+ff() {
+  local dir
+  dir=$(fd --type d --hidden --exclude .git --exclude node_modules --exclude .cache --exclude .npm --exclude .mozilla --exclude go/pkg/ --exclude .cargo --exclude .rustup --exclude .nvm . "$HOME"| fzf --height=70% --border=rounded )
+  [[ -n "$dir" ]] && cd "$dir"
+}
 alias sd='cd ~ && cd $(fd --type d --hidden --exclude .git --exclude node_modules --exclude .cache --exclude .npm --exclude .mozilla --exclude go/pkg/ --exclude .cargo --exclude .rustup --exclude .nvm| fzf --height=70% --border=rounded )'
 
 # File explorer
