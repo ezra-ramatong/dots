@@ -10,7 +10,11 @@ map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsea
 map("n", "<leader>w", "<cmd>w<cr>", { desc = "Save" })
 map("n", "<leader>q", "<cmd>confirm q<cr>", { silent = true, desc = "Quit" })
 map("n", "<leader>x", "<cmd>close<cr>", { silent = true, desc = "Close" })
-map("n", "<leader>yf", "<cmd>%y+<CR>", { desc = "Yank file" })
+map("n", "<leader>yf", "<cmd>%y+<CR>", { desc = "Yank file to system clipboard" })
+map("n", "<leader>ygg", '"+ygg', { desc = "Yank file to system clipboard" })
+map("n", "<space><space>x", "<cmd>source %<cr>", { desc = "Source current file" })
+map("n", "<space>x", "<cmd>.lua<cr>", { desc = "Lua - Execute current line" })
+map("v", "<space>x", ":lua<cr>", { desc = "Lua - Visually Higlighted Line(s)" })
 
 -- Move lines
 map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move line dbdown (normal)" })
@@ -33,6 +37,11 @@ map("n", "<leader>wb", "<C-w>o", { silent = true, desc = "Make Window Bigger" })
 map("n", "<leader>y", '"+y')
 map("v", "<leader>y", '"+y')
 map("n", "<leader>Y", '"+Y')
+
+-- Paste from system clipboard
+map("n", "<leader>p", '"+p')
+map("v", "<leader>p", '"+p')
+map("n", "<leader>P", '"+P')
 
 --[[ -- Netrw
 map("n", "<leader>e", "<cmd>Lex<cr>", { desc = "Open Netrw" })

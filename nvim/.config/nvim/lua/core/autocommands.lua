@@ -8,7 +8,11 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 	command = "highlight Normal guibg=NONE ctermbg=NONE",
 })
 
---[[ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-	pattern = "*.mdx",
-	command = "set filetype=mdx",
-}) ]]
+-- Text yank on highlight
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when yanking text",
+	group = vim.api.nvim_create_augroup("ez-highligh-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})

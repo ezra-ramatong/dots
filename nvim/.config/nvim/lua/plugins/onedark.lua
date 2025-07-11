@@ -46,7 +46,7 @@ return {
 				},
 				TelescopeMatching = { fg = "${blue}" },
 				TelescopeNormal = { bg = "${telescope_results}" },
-				TelescopeSelection = { bg = "${telescope_selection}" },
+				TelescopeSelection = { fg = "${purple}", bg = "${telescope_selection}" },
 				TelescopePreviewNormal = { bg = "${telescope_preview}" },
 				TelescopePreviewBorder = { fg = "${telescope_preview}", bg = "${telescope_preview}" },
 			},

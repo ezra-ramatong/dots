@@ -108,11 +108,12 @@ alias vcts='cp -r ~/Dev/templates/vite-vanilla-ts/ .'
 alias nrd='npm run dev'
 alias nrb='npm run build'
 alias nt='npm test'
+alias rr='~/.local/bin/runner-runner.sh'
 
 # PNPM
 alias pncv='pnpm create vite'
-alias pnrd='pnpm run dev'
-alias pnrb='pnpm run build'
+alias pnd='pnpm dev'
+alias pnb='pnpm build'
 
 # P5.js
 # alias cp5='gh repo create my-new-sketch --template=ezra-ramatong/p5js-starter --public'
@@ -122,6 +123,7 @@ alias p5='cp -r ~/Dev/templates/p5/ .'
 GEMMA3="gemma3:1b"
 # MISTRAL="mistral"
 alias chat="ollama run $GEMMA3"
+alias ols="ollama-shot"
 
 # Open WebUI
 alias owu="docker run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --name open-webui --restart always ghcr.io/open-webui/open-webui:main"
