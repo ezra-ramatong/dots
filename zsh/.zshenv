@@ -47,6 +47,7 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH="$PATH:$HOME/JUCE/extras/Projucer/Builds/LinuxMakefile/build/"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.config/emacs/bin"
+export PATH="$PATH:$HOME/Dev/projects/boilerplate/"
 # export PATH="$PATH:/usr/lib/jvm/java-21-openjdk/bin"
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 # export BUN_INSTALL="$HOME/.bun"

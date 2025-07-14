@@ -65,3 +65,5 @@ g.netrw_menu = 0
 g.netrw_winsize = 20
 g.loaded_netrwPlugin = 1
 g.loaded_netrw = 1
+
+vim.filetype.add({ extension = { templ = "templ" } })

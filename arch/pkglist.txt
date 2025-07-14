@@ -47,7 +47,9 @@ file-roller
 firefox
 firewalld
 flatpak
+foliate
 gdm
+gimagereader-gtk
 gimp
 git
 github-cli
@@ -156,6 +158,7 @@ pnpm
 poppler-glib
 postgresql
 power-profiles-daemon
+processing-bin
 pv
 python
 python-defusedxml
@@ -177,6 +180,8 @@ sudo
 sushi
 sysfsutils
 systemd-sysvcompat
+tailwindcss-bin
+tesseract-data-eng
 texinfo
 tldr
 totem

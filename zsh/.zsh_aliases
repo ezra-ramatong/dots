@@ -11,6 +11,19 @@ alias v='vim'
 alias dev='cd ~/Dev'
 alias dp='cd ~/Dev/projects/'
 alias tree='lsd --tree'
+boil() {
+    if [ $# -eq 0 ]; then
+        echo "Usage: boil <template-name> [destination]"
+        echo "Available templates:"
+        ls ~/Dev/projects/boilerplate/
+        return 1
+    fi
+    
+    local template="$1"
+    local dest="${2:-.}"  # Default to current directory if no destination given
+    
+    cp -r ~/Dev/projects/boilerplate/"$template" "$dest"
+}
 
 # Config Files
 alias zshrc='cd ~/.dots/zsh/ && nvim .zshrc'
@@ -136,6 +149,7 @@ alias zl='zellij'
 
 # Go
 alias gomi="go mod init"
+alias gobp="go-blueprint"
 
 # XDG-Open
 alias xo="xdg-open"
