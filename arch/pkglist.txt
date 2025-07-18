@@ -90,6 +90,7 @@ gvim
 haveged
 hdparm
 htop
+hugo
 hwdetect
 hwinfo
 inetutils

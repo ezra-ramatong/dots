@@ -85,7 +85,27 @@ return {
 				},
 			},
 			html = {
-				filetypes = { "html", "templ" },
+				filetypes = { "html", "templ", "template" },
+			},
+			emmet_ls = {
+				filetypes = {
+					"template",
+					"astro",
+					"css",
+					"eruby",
+					"html",
+					"htmlangular",
+					"htmldjango",
+					"javascriptreact",
+					"less",
+					"pug",
+					"sass",
+					"scss",
+					"svelte",
+					"templ",
+					"typescriptreact",
+					"vue",
+				},
 			},
 			tailwindcss = {
 				filetypes = { "templ", "astro", "javascript", "typescript", "react" },
@@ -98,12 +118,32 @@ return {
 				},
 			},
 			htmx = {
-				filetypes = { "html", "templ" },
+				filetypes = { "html", "templ", "template" },
 			},
 		}
 
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		-- local lsp_signature = require("lsp_signature")
+
+		-- Templ formatting
+		local custom_format = function()
+			if vim.bo.filetype == "templ" then
+				local bufnr = vim.api.nvim_get_current_buf()
+				local filename = vim.api.nvim_buf_get_name(bufnr)
+				local cmd = "templ fmt " .. vim.fn.shellescape(filename)
+
+				vim.fn.jobstart(cmd, {
+					on_exit = function()
+						-- Reload the buffer only if it's still the current buffer
+						if vim.api.nvim_get_current_buf() == bufnr then
+							vim.cmd("e!")
+						end
+					end,
+				})
+			else
+				vim.lsp.buf.format()
+			end
+		end
 
 		local on_attach = function(client, bufnr)
 			vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
@@ -125,7 +165,7 @@ return {
 			map("K", vim.lsp.buf.hover, "Hover documentation")
 			map("<leader>la", vim.lsp.buf.code_action, "Code action")
 			map("<leader>ld", vim.diagnostic.setqflist, "List diagnostics")
-			map("<leader>lf", vim.lsp.buf.format, "Format buffer")
+			map("<leader>lf", custom_format, "Format buffer")
 			map("<leader>li", "<cmd>LspInfo<cr>", "LSP information")
 			map(
 				"<leader>lih",

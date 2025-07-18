@@ -4,7 +4,9 @@ local t = ls.text_node
 local i = ls.insert_node
 
 return {
-  s("type", {
-    t({ "/** @type {" }), i(1, "number"), t({ "} */" })
-  }),
+	s("type", {
+		t({ "/** @type {" }),
+		i(1, "number"),
+		t({ "} */" }),
+	}),
 }
