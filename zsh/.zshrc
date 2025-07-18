@@ -19,8 +19,8 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr ' 🞸'
 zstyle ':vcs_info:*' stagedstr ' ⇡'
 # Set the format of the Git information for vcs_info
-zstyle ':vcs_info:git:*' formats       '(⎇  %b%u%c)'
-zstyle ':vcs_info:git:*' actionformats '(⎇  %b|%a%u%c)'
+zstyle ':vcs_info:git:*' formats       '(%b%u%c)'
+zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
 
 # Completion
 zstyle ':completion:*' completer _complete _ignored _approximate
@@ -34,14 +34,7 @@ zstyle :compinstall filename '$HOME/.zcompdump'
 autoload -Uz colors && colors
 setopt PROMPT_SUBST
 PROMPT='%F{blue}aaaaaaaaaaaa ▶%f '
-
-local node_ver=""
-if command -v node &> /dev/null; then
-  node_ver="$(node -v)"
-fi
-
-RPROMPT='%F{green}%~%f %F{yellow}${vcs_info_msg_0_}%f %F{magenta}${node_ver}%f'
-
+RPROMPT='%F{green}%~%f %F{yellow}${vcs_info_msg_0_}%f'
 HISTFILE=$HOME/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
