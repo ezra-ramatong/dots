@@ -8,60 +8,37 @@ return {
 	config = function()
 		require("mason").setup()
 		require("mason-lspconfig").setup({
-			--[[ automatic_enable = {
-				exclude = {
-					"vue_ls",
-				},
-			}, ]]
 			ensure_installed = {
-				-- Language Servers
 				"html",
 				"emmet_ls",
 				"cssls",
+				"tailwindcss",
+				"templ",
 				"ts_ls",
 				"lua_ls",
 				"gopls",
-				"vue_ls",
 				"bashls",
-				"astro",
-				"mdx_analyzer",
+				"vue_ls",
 			},
 		})
-		local inlay_hints_config = {
-			includeInlayParameterNameHints = "all",
-			includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-			includeInlayFunctionParameterTypeHints = true,
-			includeInlayVariableTypeHints = true,
-			includeInlayPropertyDeclarationTypeHints = true,
-			includeInlayFunctionLikeReturnTypeHints = true,
-			includeInlayEnumMemberValueHints = true,
-		}
 
 		local server_settings = {
 			ts_ls = {
-				init_options = {
-					plugins = {
-						{
-							name = "@vue/typescript-plugin",
-							location = vim.fn.stdpath("data")
-								.. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
-							languages = { "vue" },
+				"ts_ls",
+				{
+					init_options = {
+						plugins = {
+							{
+								name = "@vue/typescript-plugin",
+								location = vim.fn.stdpath("data")
+									.. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
+								languages = { "vue" },
+							},
 						},
 					},
-				},
-				settings = {
-					javascript = { inlayHints = inlay_hints_config },
-					typescript = { inlayHints = inlay_hints_config },
-				},
-				filetypes = {
-					"javascript",
-					"javascriptreact",
-					"javascript.jsx",
-					"typescript",
-					"typescriptreact",
-					"typescript.tsx",
-					"vue",
-					"mdx",
+					filetypes = {
+						"vue",
+					},
 				},
 			},
 			lua_ls = {
@@ -76,49 +53,11 @@ return {
 					gofumpt = true,
 				},
 			},
-			mdx_analyzer = {
-				init_options = {
-					typescript = {
-						enabled = true,
-						tsdk = vim.fn.expand("~/.nvm/versions/node/v22.16.0/lib/node_modules/typescript/lib"),
-					},
-				},
-			},
-			html = {
-				filetypes = { "html", "templ", "template" },
-			},
-			emmet_ls = {
-				filetypes = {
-					"template",
-					"astro",
-					"css",
-					"eruby",
-					"html",
-					"htmlangular",
-					"htmldjango",
-					"javascriptreact",
-					"less",
-					"pug",
-					"sass",
-					"scss",
-					"svelte",
-					"templ",
-					"typescriptreact",
-					"vue",
-				},
-			},
 			tailwindcss = {
-				filetypes = { "templ", "astro", "javascript", "typescript", "react" },
-				settings = {
-					tailwindCSS = {
-						includeLanguages = {
-							templ = "html",
-						},
-					},
+				"tailwindcss",
+				{
+					filetypes = { "templ" },
 				},
-			},
-			htmx = {
-				filetypes = { "html", "templ", "template" },
 			},
 		}
 
@@ -145,10 +84,8 @@ return {
 			end
 		end
 
-		local on_attach = function(client, bufnr)
+		local on_attach = function(_, bufnr)
 			vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
-			-- if client.server_capabilities.inlayHintProvider then vim.lsp.inlay_hint.enable(true) end
-			-- lsp_signature.on_attach({}, bufnr)
 
 			-- LSP Mappings
 			local map = function(keys, func, desc)
