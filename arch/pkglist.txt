@@ -15,7 +15,6 @@ bluez
 bluez-utils
 btrfs-progs
 cantarell-fonts
-chromium
 cryptsetup
 ddgr
 device-mapper
@@ -48,6 +47,7 @@ firefox
 firewalld
 flatpak
 foliate
+fontforge
 gdm
 gimagereader-gtk
 gimp
@@ -61,11 +61,13 @@ gnome-clocks
 gnome-console
 gnome-control-center
 gnome-disk-utility
+gnome-font-viewer
 gnome-keyring
 gnome-nettool
 gnome-power-manager
 gnome-screenshot
 gnome-shell
+gnome-shell-extension-pop-shell-git
 gnome-software
 gnome-system-monitor
 gnome-terminal
@@ -173,6 +175,7 @@ rose-pine-cursor
 rsync
 rtkit
 s-nail
+screen
 sg3_utils
 smartmontools
 sof-firmware

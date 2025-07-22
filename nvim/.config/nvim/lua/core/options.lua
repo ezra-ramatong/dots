@@ -6,15 +6,15 @@ o.laststatus = 3
 o.showmode = false
 
 o.cursorline = true
-o.cursorlineopt = "number"
+o.cursorlineopt = "both"
 
 o.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor20-Cursor"
 
-o.colorcolumn = "100"
---[[ o.textwidth = 100
+o.colorcolumn = "80"
+o.textwidth = 100
 o.wrap = true -- Enable line wrapping
 o.linebreak = true
- ]]
+
 -- Indenting
 o.expandtab = true
 o.shiftwidth = 2
@@ -49,8 +49,6 @@ o.undofile = true
 o.updatetime = 250
 opt.whichwrap:append("<>[]hl")
 o.termguicolors = true
--- o.winborder = "rounded"
--- o.winblend = 30
 
 -- disable some default providers
 g.loaded_node_provider = 0
@@ -66,4 +64,5 @@ g.netrw_winsize = 20
 g.loaded_netrwPlugin = 1
 g.loaded_netrw = 1
 
+-- Add .templ to filetypes
 vim.filetype.add({ extension = { templ = "templ" } })
