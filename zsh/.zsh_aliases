@@ -5,6 +5,8 @@ alias lst="lsd --tree --all"
 alias md='mkdir'
 alias mdp='mkdir -p'
 alias rb='reboot'
+alias rmf='rm -rfv'
+alias rm='rm -v'
 alias sn='shutdown now'
 alias vim='nvim'
 alias v='vim'
@@ -97,6 +99,7 @@ alias grmr='git rm -r'
 alias gs='git status'
 alias gsw='git switch'
 alias gswc='git switch -c'
+alias gcmu="git commit -m 'update'"
 
 # Lazygit
 alias lg='lazygit'
