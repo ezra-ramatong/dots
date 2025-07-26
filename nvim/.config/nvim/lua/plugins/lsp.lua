@@ -48,6 +48,18 @@ return {
 					},
 				},
 			},
+			html = {
+				"html",
+				{
+					filetypes = { "tmpl" },
+				},
+			},
+			emmet_ls = {
+				"emmet_ls",
+				{
+					filetypes = { "tmpl" },
+				},
+			},
 			gopls = {
 				settings = {
 					gofumpt = true,

@@ -66,3 +66,4 @@ g.loaded_netrw = 1
 
 -- Add .templ to filetypes
 vim.filetype.add({ extension = { templ = "templ" } })
+vim.filetype.add({ extension = { tmpl = "html" } })

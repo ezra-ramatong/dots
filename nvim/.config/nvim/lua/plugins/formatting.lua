@@ -30,7 +30,7 @@ return {
 			markdown = { "prettierd" },
 			go = { "gofumpt" },
 			html = { "prettierd" },
-			htmlhugo = { "prettierd" },
+			tmpl = { "prettierd" },
 			--[[ c = { "clang-format" },
       cpp = { "clang-format" }, ]]
 		},
