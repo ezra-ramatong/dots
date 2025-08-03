@@ -65,12 +65,6 @@ return {
 					gofumpt = true,
 				},
 			},
-			tailwindcss = {
-				"tailwindcss",
-				{
-					filetypes = { "templ" },
-				},
-			},
 		}
 
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()

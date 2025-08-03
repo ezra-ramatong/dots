@@ -1,3 +1,4 @@
+abiword
 accountsservice
 adwaita-icon-theme
 alacritty
@@ -15,6 +16,7 @@ bluez
 bluez-utils
 btrfs-progs
 cantarell-fonts
+chromium
 cryptsetup
 ddgr
 device-mapper
@@ -150,6 +152,7 @@ ollama
 openssh
 os-prober
 pacman-contrib
+pandoc-cli
 pavucontrol
 perl
 pipewire-alsa
@@ -182,6 +185,7 @@ sof-firmware
 stow
 sudo
 sushi
+syncthing
 sysfsutils
 systemd-sysvcompat
 tailwindcss-bin
