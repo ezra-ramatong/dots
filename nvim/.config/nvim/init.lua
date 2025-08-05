@@ -1,4 +1,4 @@
---  OPTIONS 
+--  OPTIONS
 local opt = vim.opt
 local o = vim.o
 local g = vim.g
@@ -8,7 +8,9 @@ o.expandtab = true
 o.shiftwidth = 2
 o.smartindent = true
 o.tabstop = 2
-o.softtabstop = 2 o.showmode = false o.cursorline = true
+o.softtabstop = 2
+o.showmode = false
+o.cursorline = true
 o.cursorlineopt = "both"
 o.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor20-Cursor"
 -- o.colorcolumn = "80"
@@ -64,17 +66,19 @@ map("", "<Space>", "<Nop>", { silent = true })
 g.mapleader = " "
 
 -- [Essential]
-map("i", "jk","<ESC>", { silent = true })
-map("n", "<leader>w",":w<cr>")
-map("n", "<leader>x",":bd!<cr>")
-map("n", "<leader>bh",":hide<cr>")
-map("n", "<leader>c",":close<cr>")
-map("n", "<leader>q",":qall<cr>")
-map("n", "<ESC>",":noh<cr>")
-map("t", "<ESC>", "<C-\\><C-n>")
+map("i", "jk", "<ESC>", { silent = true })
+map("n", "<leader>w", ":w<cr>")
+map("n", "<leader>x", ":bd!<cr>")
+map("n", "<leader>bh", ":hide<cr>")
+map("n", "<leader>c", ":close<cr>")
+map("n", "<leader>q", ":qall<cr>")
+map("n", "<ESC>", ":noh<cr>")
+map("t", "<S-ESC>", "<C-\\><C-n>")
 map("n", "<leader>yf", "<cmd>%y+<CR>", { desc = "Yank file to system clipboard" })
 
-map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move line dbdown (normal)" }) map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move line up (normal)" }) map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move line down (insert)" })
+map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move line dbdown (normal)" })
+map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move line up (normal)" })
+map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move line down (insert)" })
 map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move line up (insert)" })
 map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move line down (visual)" })
 map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move line up (visual)" })
@@ -89,7 +93,7 @@ map("n", "<C-l>", "<c-w>l", { silent = true, desc = "Right window navigation" })
 map("n", "<leader>tc", ":tabc<cr>")
 map("n", "<leader>tn", ":tabnew<cr>")
 map("n", "<leader>th", ":tab help<cr>")
-map("n", "<S-h>",":tabn<cr>")
+map("n", "<S-h>", ":tabn<cr>")
 
 -- [Terminal]
 map("n", "<leader>ht", ":hor term<cr>")
@@ -134,7 +138,7 @@ map("n", "<leader>s", ":Startify<cr>")
 -- [Lazy - package manager]
 map("n", "<leader>lz", "<cmd>Lazy<cr>", { desc = "Open Lazy" })
 
--- [Mason - language tooling manager] 
+-- [Mason - language tooling manager]
 map("n", "<leader>ma", "<cmd>Mason<cr>", { desc = "Open Mason" })
 
 -- ------------------------------------------------------------------------------------------
@@ -142,8 +146,8 @@ map("n", "<leader>ma", "<cmd>Mason<cr>", { desc = "Open Mason" })
 -- AUTOCOMMANDS
 
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
-  desc = "Disable automatic comment leader insertion",
-  command = "set formatoptions-=cro",
+	desc = "Disable automatic comment leader insertion",
+	command = "set formatoptions-=cro",
 })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
