@@ -25,7 +25,7 @@ return	{
     require("telescope").setup({
       defaults = {
         prompt_prefix = " ",
-        selection_caret = "❯ ",
+        selection_caret = "▶ ",
         path_display = { "truncate" },
         sorting_strategy = "ascending",
         file_ignore_patterns = { ".git/", "node_modules" },
@@ -45,6 +45,5 @@ return	{
       },
     })
     require("telescope").load_extension("fzf")
-    -- require("telescope").load_extension("harpoon")
   end,
 }

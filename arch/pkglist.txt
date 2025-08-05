@@ -1,4 +1,3 @@
-abiword
 accountsservice
 adwaita-icon-theme
 alacritty
@@ -16,7 +15,6 @@ bluez
 bluez-utils
 btrfs-progs
 cantarell-fonts
-chromium
 cryptsetup
 ddgr
 device-mapper
@@ -232,6 +230,5 @@ yay
 yt-dlp
 zeal
 zellij
-zen-browser-bin
 zip
 zsh
