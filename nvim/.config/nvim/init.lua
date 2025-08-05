@@ -98,6 +98,7 @@ map("n", "<S-h>", ":tabn<cr>")
 -- [Terminal]
 map("n", "<leader>ht", ":hor term<cr>")
 map("n", "<leader>vt", ":vert term<cr>")
+map("n", "<leader>g", ":term lazygit<cr>")
 
 -- [Yank to system clipboard]
 map("n", "<leader>y", '"+y')
