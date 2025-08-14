@@ -1,0 +1,29 @@
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding = {x = 20, y = 25}
+dynamic_padding = true
+opacity = 1
+decorations = "None"
+startup_mode = "Maximized"
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+# normal = { family = "SlussenMonoTRIAL Nerd Font", style = "Regular" }
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+size = 16.0
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+# [cursor]
+# style = { shape = "Block", blinking = "Always" }
+
+[general]
+# Light mode
+# import = ["~/.config/alacritty/themes/catppuccin-latte.toml"]
+
+# Dark mode
+import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"]

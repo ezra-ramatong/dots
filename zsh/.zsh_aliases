@@ -1,0 +1,189 @@
+# General
+alias la='lsd -la'
+alias ls='lsd'
+alias lst="lsd --tree --all"
+alias md='mkdir'
+alias mdp='mkdir -p'
+alias rb='reboot'
+alias rmf='rm -rfv'
+alias rm='rm -v'
+alias sn='shutdown now'
+alias vim='nvim'
+alias v='vim'
+alias dev='cd ~/Dev'
+alias dp='cd ~/Dev/projects/'
+alias tree='lsd --tree'
+alias life='/run/media/ezra/LIFE'
+alias h='/run/media/ezra/LIFE/notes/hoarder && nvim'
+boil() {
+    if [ $# -eq 0 ]; then
+        echo "Usage: boil <template-name> [destination]"
+        echo "Available templates:"
+        ls ~/Dev/projects/boilerplate/
+        return 1
+    fi
+    
+    local template="$1"
+    local dest="${2:-.}"  # Default to current directory if no destination given
+    
+    cp -r ~/Dev/projects/boilerplate/"$template" "$dest"
+}
+
+# Config Files
+alias zshrc='cd ~/.dots/zsh/ && nvim .zshrc'
+alias aliases='cd ~/.dots/zsh && nvim .zsh_aliases'
+alias szsh='exec zsh'
+alias nvimc='cd ~/.config/nvim/ && nvim init.lua'
+alias waybarc='cd ~/.config/waybar/ && nvim config.jsonc'
+alias swayc='cd ~/.config/sway/ && nvim config'
+alias dots='cd ~/.dots/'
+alias alac='cd ~/.config/alacritty/ && nvim alacritty.toml'
+
+# Network Manager
+alias wifi='nmtui'
+
+# fzf
+alias fe='fzf | xargs -r $EDITOR'
+_ff_common() {
+  local search_path="${1:-.}" 
+  local dir
+  dir=$(fd --type d --hidden \
+           --exclude .git \
+           --exclude node_modules \
+           --exclude .cache \
+           --exclude .npm \
+           --exclude .mozilla \
+           --exclude go/pkg/ \
+           --exclude .cargo \
+           --exclude .rustup \
+           --exclude .nvm \
+           . "$search_path" | \
+         fzf --height=70% --border=rounded)
+  [[ -n "$dir" ]] && cd "$dir"
+}
+ffl() { _ff_common "."; }
+ff()  { _ff_common "$HOME"; }
+
+alias sd='cd ~ && cd $(fd --type d --hidden --exclude .git --exclude node_modules --exclude .cache --exclude .npm --exclude .mozilla --exclude go/pkg/ --exclude .cargo --exclude .rustup --exclude .nvm| fzf --height=70% --border=rounded )'
+
+# File explorer
+alias rn='ranger'
+
+# Package Managers
+
+# Pacman
+alias pac='sudo pacman -S'
+alias pacrs='sudo pacman -Rs'
+alias pacu='sudo pacman -Syu'
+alias pacbll='pacman -Qq | fzf --preview "pacman -Qil {}" --layout=reverse --bind "enter:execute(pacman -Qil {} | less)"'
+alias pacbrl='pacman -Slq | fzf --preview "pacman -Si {}" --layout=reverse'
+
+# Yay
+alias yayu='yay -Syu'
+alias yayrs='yay -Rs'
+
+# Git
+alias ga='git add'
+alias gb='git branch'
+alias gbd='git branch -d'
+alias gc='git commit'
+alias gco='git checkout'
+alias gcob='git checkout -b'
+alias gd='git diff'
+alias gl='git log'
+alias glo='git log --pretty="oneline"'
+alias gm='git merge'
+alias gp='git push'
+alias gpl='git pull'
+alias gpo='git push origin'
+alias gposu='git push origin --set-upstream'
+alias grmr='git rm -r'
+alias gs='git status'
+alias gsw='git switch'
+alias gswc='git switch -c'
+alias gcmu="git commit -m 'update'"
+
+# Lazygit
+alias lg='lazygit'
+
+# Docker
+alias dcu='docker compose up'
+alias dcd='docker compose down'
+
+# Custom
+alias q='exit'
+
+# Umuzi
+alias up='cd ~/Dev/work/projects'
+alias stu='cd ~/Dev/work/umuzi/stand-up/ && nvim .'
+
+# Vite setup
+alias vc='npm create vite@latest'
+alias vcjs='cp -r ~/Dev/templates/vite-vanilla-js/ .'
+alias vcts='cp -r ~/Dev/templates/vite-vanilla-ts/ .'
+
+# NPM
+alias nrd='npm run dev'
+alias nrb='npm run build'
+alias nt='npm test'
+alias rr='~/.local/bin/runner-runner.sh'
+
+# PNPM
+alias pncv='pnpm create vite'
+alias pnd='pnpm dev'
+alias pnb='pnpm build'
+
+# P5.js
+# alias cp5='gh repo create my-new-sketch --template=ezra-ramatong/p5js-starter --public'
+alias p5='cp -r ~/Dev/templates/p5/ .'
+
+# Ollama
+GEMMA3="gemma3:1b"
+# MISTRAL="mistral"
+alias chat="ollama run $GEMMA3"
+alias ols="ollama-shot"
+
+# Open WebUI
+alias owu="docker run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --name open-webui --restart always ghcr.io/open-webui/open-webui:main"
+
+# HTTP Server
+alias pyserver="python3 -m http.server"
+
+# Zellij
+alias zl='zellij'
+
+# Go
+alias gomi="go mod init"
+alias gobp="go-blueprint"
+
+# XDG-Open
+alias xo="xdg-open"
+alias ytm="xdg-open https://music.youtube.com &"
+alias mdn="xdg-open https://developer.mozilla.org/en-US/ &"
+alias github="xdg-open https://github.com/ezra-ramatong/ &"
+
+# Hugo
+hugo() {
+  hvm_show_status=true
+  if hugo_bin=$(hvm status --printExecPathCached); then
+    if [ "${hvm_show_status}" = "true" ]; then
+      >&2 printf "Hugo version management is enabled in this directory.\\n"
+      >&2 printf "Run 'hvm status' for details, or 'hvm disable' to disable.\\n\\n"
+    fi
+  else
+    if hugo_bin=$(hvm status --printExecPath); then
+      if ! hvm use --useVersionInDotFile; then
+        return 1
+      fi
+    else
+      if ! hugo_bin=$(whence -p hugo); then
+        >&2 printf "Command not found.\\n"
+        return 1
+      fi
+    fi
+  fi
+  "${hugo_bin}" "$@"
+}
+
+# Load Neovim Session
+alias vims='vim -S Session.vim'
