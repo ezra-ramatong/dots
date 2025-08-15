@@ -17,14 +17,6 @@ return {
 				section_separators = "",
 				theme = custom_catppuccin,
 			},
-			winbar = {
-				lualine_a = {},
-				lualine_b = {},
-				lualine_c = { "filename" },
-				lualine_x = {},
-				lualine_y = {},
-				lualine_z = {},
-			},
 			inactive_winbar = {
 				lualine_a = {},
 				lualine_b = {},
@@ -34,7 +26,7 @@ return {
 				lualine_z = {},
 			},
 			sections = {
-				lualine_c = { " " },
+				lualine_c = { "filename" },
 				lualine_x = { " " },
 				lualine_y = {
 					{ "filetype", icon_only = false, separator = "", padding = { left = 1, right = 0 } },

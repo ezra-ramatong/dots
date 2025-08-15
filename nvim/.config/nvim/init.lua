@@ -68,14 +68,12 @@ g.mapleader = " "
 -- [Essential]
 map("i", "jk", "<ESC>", { silent = true })
 map("n", "<leader>w", ":w<cr>")
-map("n", "<leader>x", ":bd!<cr>")
-map("n", "<leader>bh", ":hide<cr>")
-map("n", "<leader>c", ":close<cr>")
-map("n", "<leader>q", ":qall<cr>")
+map("n", "<leader>c", ":bd!<cr>", { desc = "Kill buffer" })
+map("n", "<leader>q", ":close<cr>", { desc = "Close window" })
+map("n", "<leader>x", ":qall<cr>", { desc = "Quit vim" })
 map("n", "<ESC>", ":noh<cr>")
-map("t", "<S-ESC>", "<C-\\><C-n>")
+map("t", "<leader>z", "<C-\\><C-n>")
 map("n", "<leader>yf", "<cmd>%y+<CR>", { desc = "Yank file to system clipboard" })
-map("n", "<S-l>", ":bnext<cr>")
 
 map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move line dbdown (normal)" })
 map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move line up (normal)" })
@@ -90,17 +88,13 @@ map("n", "<C-j>", "<C-w>j", { silent = true, desc = "Down window navigation" })
 map("n", "<C-k>", "<C-w>k", { silent = true, desc = "Up window navigation" })
 map("n", "<C-l>", "<c-w>l", { silent = true, desc = "Right window navigation" })
 
--- [Tab management]
-map("n", "<leader>tc", ":tabc<cr>")
-map("n", "<leader>tn", ":tabnew<cr>")
-map("n", "<leader>th", ":tab help<cr>")
-map("n", "<S-h>", ":tabn<cr>")
+-- [Tab navigation]
+map("n", "<leader>tp", ":tabN<cr>")
+map("n", "<leader>tn", ":tabn<cr>")
 
 -- [Terminal]
-map("n", "<leader>ht", ":hor term<cr>")
-map("n", "<leader>t", ":vert term<cr>")
-map("n", "<leader>g", ":term lazygit<cr>")
-map("n", "<leader>ds", ":term<cr>")
+map("n", "<leader>t", ":term<cr>")
+map("n", "<leader>g", ":term lazygit<cr>") -- lazygit
 
 -- [Yank to system clipboard]
 map("n", "<leader>y", '"+y')
@@ -158,14 +152,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	group = vim.api.nvim_create_augroup("ez-highligh-yank", { clear = true }),
 	callback = function()
 		vim.highlight.on_yank()
-	end,
-})
-
--- via an autocmd
-vim.api.nvim_create_autocmd("BufEnter", {
-	pattern = "*.html",
-	callback = function()
-		vim.b.completion = false
 	end,
 })
 
