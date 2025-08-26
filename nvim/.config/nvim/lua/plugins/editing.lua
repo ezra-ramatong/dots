@@ -33,8 +33,8 @@ return {
 	{
 		"hrsh7th/nvim-cmp",
 		enabled = true,
-		event = "InsertEnter",
-		-- commit = "b356f2c",
+		event = "BufEnter",
+		commit = "b356f2c",
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-path",
@@ -48,6 +48,7 @@ return {
 			},
 			"saadparwaiz1/cmp_luasnip",
 			"hrsh7th/cmp-nvim-lsp-signature-help",
+			"roginfarrer/cmp-css-variables",
 		},
 		config = function()
 			local cmp = require("cmp")
@@ -72,6 +73,7 @@ return {
 					{ name = "nvim_lsp", priority = 1000 },
 					{ name = "luasnip", keyword_length = 3 },
 					{ name = "nvim_lsp_signature_help" },
+					{ name = "css-variables" },
 					{ name = "path" },
 				}),
 				mapping = {
@@ -177,6 +179,8 @@ return {
 				}
 			end,
 			formatters_by_ft = {
+				css = { "prettierd" },
+				scss = { "prettierd" },
 				javascript = { "prettierd" },
 				javascriptreact = { "prettierd" },
 				typescript = { "prettierd" },

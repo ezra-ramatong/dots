@@ -28,6 +28,8 @@ vim.opt.foldtext = ""
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldnestmax = 4
+vim.opt.exrc = true
+vim.opt.secure = true
 
 -- [Numbers]
 o.number = true
@@ -68,9 +70,10 @@ g.mapleader = " "
 -- [Essential]
 map("i", "jk", "<ESC>", { silent = true })
 map("n", "<leader>w", ":w<cr>")
+map("n", "<leader>wa", ":wall<cr>")
 map("n", "<leader>c", ":bd!<cr>", { desc = "Kill buffer" })
 map("n", "<leader>q", ":close<cr>", { desc = "Close window" })
-map("n", "<leader>x", ":qall<cr>", { desc = "Quit vim" })
+map("n", "<leader>xx", ":confirm qall<cr>", { desc = "Quit vim" })
 map("n", "<ESC>", ":noh<cr>")
 map("t", "<leader>z", "<C-\\><C-n>")
 map("n", "<leader>yf", "<cmd>%y+<CR>", { desc = "Yank file to system clipboard" })
@@ -93,7 +96,8 @@ map("n", "<leader>tp", ":tabN<cr>")
 map("n", "<leader>tn", ":tabn<cr>")
 
 -- [Terminal]
-map("n", "<leader>t", ":term<cr>")
+map("n", "<leader>tt", ":term<cr>")
+map("n", "<leader>t", ":hor term<cr>")
 map("n", "<leader>g", ":term lazygit<cr>") -- lazygit
 
 -- [Yank to system clipboard]
@@ -115,6 +119,7 @@ map("n", "<leader>cc", "<cmd>cclose<cr>zz", { desc = "Close quickfix window" })
 map("n", "<leader>e", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
 
 -- [Telescope]
+map("n", "<leader>f", "<cmd>Telescope live_grep<cr>", { desc = "Find word in workspace" })
 map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find command history" })
 map("n", "<leader>fc", "<cmd>Telescope commands<cr>", { desc = "Find command history" })
 map("n", "<leader>ff", "<cmd>Telescope find_files hidden=true <cr>", { desc = "Find all files" })
@@ -125,7 +130,6 @@ map("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Keymaps" })
 map("n", "<leader>fm", "<cmd>Telescope man_pages<cr>", { desc = "Find Man Pages" })
 map("n", "<leader>fr", "<cmd>Telescope resume<cr>", { desc = "Find command history" })
 map("n", "<leader>fs", "<cmd>Telescope search_history<cr>", { desc = "Find command history" })
-map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "Find word in workspace" })
 
 -- [Session Management]
 map("n", "<leader>ss", ":SSave<cr>")

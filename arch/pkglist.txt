@@ -37,6 +37,7 @@ endeavouros-keyring
 endeavouros-mirrorlist
 eos-dracut
 eos-hooks
+epiphany
 ethtool
 evince
 exfatprogs
@@ -51,6 +52,7 @@ flatpak
 foliate
 fontforge
 gdm
+gfeeds
 gimagereader-gtk
 gimp
 git
@@ -103,6 +105,7 @@ intel-ucode
 inxi
 iptables-nft
 iwd
+jdk21-openjdk
 jfsutils
 jq
 lazygit
@@ -125,6 +128,7 @@ lsscsi
 lvm2
 man-db
 man-pages
+maven
 mdadm
 meld
 mesa-utils
@@ -133,6 +137,7 @@ mtools
 nano
 nano-syntax-highlighting
 nautilus
+neovim
 netctl
 networkmanager
 networkmanager-openconnect
@@ -193,6 +198,7 @@ tesseract-data-eng
 texinfo
 tldr
 totem
+tree
 ttf-bitstream-vera
 ttf-dejavu
 ttf-ibmplex-mono-nerd

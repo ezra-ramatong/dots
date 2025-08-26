@@ -1,6 +1,5 @@
 # General
-alias la='lsd -la'
-alias ls='lsd'
+alias ls='lsd -la'
 alias lst="lsd --tree --all"
 alias md='mkdir'
 alias mdp='mkdir -p'
@@ -12,21 +11,20 @@ alias vim='nvim'
 alias v='vim'
 alias dev='cd ~/Dev'
 alias dp='cd ~/Dev/projects/'
-alias tree='lsd --tree'
 alias life='/run/media/ezra/LIFE'
 alias h='/run/media/ezra/LIFE/notes/hoarder && nvim'
 boil() {
     if [ $# -eq 0 ]; then
         echo "Usage: boil <template-name> [destination]"
         echo "Available templates:"
-        ls ~/Dev/projects/boilerplate/
+        ls ~/Dev/boilerplate/
         return 1
     fi
     
     local template="$1"
     local dest="${2:-.}"  # Default to current directory if no destination given
     
-    cp -r ~/Dev/projects/boilerplate/"$template" "$dest"
+    cp -r ~/Dev/boilerplate/"$template" "$dest"
 }
 
 # Config Files
@@ -184,6 +182,7 @@ hugo() {
   fi
   "${hugo_bin}" "$@"
 }
+alias hs="hugo server"
 
 # Load Neovim Session
 alias vims='vim -S Session.vim'
