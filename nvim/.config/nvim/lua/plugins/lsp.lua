@@ -33,6 +33,15 @@ return {
 					gofumpt = true,
 				},
 			},
+			cssls = {
+				settings = {
+					css = {
+						lint = {
+							unknownAtRules = "ignore",
+						},
+					},
+				},
+			},
 		}
 
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
