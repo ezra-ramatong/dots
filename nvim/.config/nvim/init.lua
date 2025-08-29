@@ -90,14 +90,14 @@ map("n", "<C-k>", "<C-w>k", { silent = true, desc = "Up window navigation" })
 map("n", "<C-l>", "<c-w>l", { silent = true, desc = "Right window navigation" })
 
 -- [Tab navigation]
-map("n", "<leader>tp", ":tabN<cr>", { desc = "Previous tab" })
-map("n", "<leader>tn", ":tabn<cr>", { desc = "Next tab" })
+map("n", "<leader>i", ":tabN<cr>", { desc = "Previous tab" })
+map("n", "<leader>o", ":tabn<cr>", { desc = "Next tab" })
 map("n", "<leader>te", ":tabe<cr>", { desc = "New tab" })
 
 -- [Terminal]
-map("n", "<leader>tt", ":term<cr>")
+map("n", "<leader>tt", ":tabnew | :term<cr>")
 map("n", "<leader>t", ":hor term<cr>")
-map("n", "<leader>g", ":term lazygit<cr>") -- lazygit
+map("n", "<leader>g", ":tabnew | :term lazygit<cr>", { noremap = true, silent = true, desc = "Run Lazygit" }) -- lazygit
 
 -- [Yank to system clipboard]
 map("n", "<leader>y", '"+y')
