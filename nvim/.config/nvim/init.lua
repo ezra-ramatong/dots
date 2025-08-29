@@ -28,8 +28,6 @@ vim.opt.foldtext = ""
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldnestmax = 4
-vim.opt.exrc = true
-vim.opt.secure = true
 
 -- [Numbers]
 o.number = true
@@ -92,8 +90,9 @@ map("n", "<C-k>", "<C-w>k", { silent = true, desc = "Up window navigation" })
 map("n", "<C-l>", "<c-w>l", { silent = true, desc = "Right window navigation" })
 
 -- [Tab navigation]
-map("n", "<leader>tp", ":tabN<cr>")
-map("n", "<leader>tn", ":tabn<cr>")
+map("n", "<leader>tp", ":tabN<cr>", { desc = "Previous tab" })
+map("n", "<leader>tn", ":tabn<cr>", { desc = "Next tab" })
+map("n", "<leader>te", ":tabe<cr>", { desc = "New tab" })
 
 -- [Terminal]
 map("n", "<leader>tt", ":term<cr>")
@@ -111,8 +110,8 @@ map("v", "<leader>p", '"+p')
 map("n", "<leader>P", '"+P')
 
 -- [Quickfix list navigation]
-map("n", "<leader>j", "<cmd>cnext<cr>zz", { desc = "Forward quickfix list" })
-map("n", "<leader>k", "<cmd>cprev<cr>zz", { desc = "Backward quickfix list" })
+map("n", "<leader>n", "<cmd>cnext<cr>zz", { desc = "Forward quickfix list" })
+map("n", "<leader>nn", "<cmd>cprev<cr>zz", { desc = "Backward quickfix list" })
 map("n", "<leader>cc", "<cmd>cclose<cr>zz", { desc = "Close quickfix window" })
 
 -- [File explorer (Oil)]

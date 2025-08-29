@@ -48,7 +48,6 @@ return {
 			},
 			"saadparwaiz1/cmp_luasnip",
 			"hrsh7th/cmp-nvim-lsp-signature-help",
-			"roginfarrer/cmp-css-variables",
 		},
 		config = function()
 			local cmp = require("cmp")
