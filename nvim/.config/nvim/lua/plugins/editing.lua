@@ -178,6 +178,7 @@ return {
 				}
 			end,
 			formatters_by_ft = {
+				astro = { "prettierd" },
 				css = { "prettierd" },
 				scss = { "prettierd" },
 				javascript = { "prettierd" },
@@ -187,6 +188,7 @@ return {
 				markdown = { "prettierd" },
 				go = { "gofumpt" },
 				html = { "prettierd" },
+				json = { "prettierd" },
 			},
 		},
 	},

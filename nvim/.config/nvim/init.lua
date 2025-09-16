@@ -121,6 +121,7 @@ map("n", "<leader>e", "<CMD>Oil --float<CR>", { desc = "Open parent directory" }
 map("n", "<leader>f", "<cmd>Telescope live_grep<cr>", { desc = "Find word in workspace" })
 map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find command history" })
 map("n", "<leader>fc", "<cmd>Telescope commands<cr>", { desc = "Find command history" })
+map("n", "<leader>fd", "<cmd>Telescope diagnostics<cr>", { desc = "Find workspace diagnostics" })
 map("n", "<leader>ff", "<cmd>Telescope find_files hidden=true <cr>", { desc = "Find all files" })
 map("n", "<leader>fg", "<cmd>Telescope git_files show_untracked=true<cr>", { desc = "Find git files" })
 map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Find Help" })
