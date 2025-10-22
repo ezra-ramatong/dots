@@ -5,6 +5,7 @@ alsa-firmware
 alsa-plugins
 alsa-utils
 aspell
+aspnet-runtime-8.0
 b43-fwcutter
 baobab
 base
@@ -16,7 +17,7 @@ bluez-utils
 btrfs-progs
 cantarell-fonts
 chromium
-code
+cmake
 cryptsetup
 dart-sass
 ddgr
@@ -28,6 +29,7 @@ dnsmasq
 docker
 docker-compose
 dosfstools
+dotnet-sdk-8.0
 downgrade
 dracut
 duf
@@ -106,7 +108,7 @@ intel-ucode
 inxi
 iptables-nft
 iwd
-jdk21-openjdk
+jetbrains-toolbox
 jfsutils
 jq
 lazygit
@@ -129,7 +131,6 @@ lsscsi
 lvm2
 man-db
 man-pages
-maven
 mdadm
 meld
 mesa-utils
@@ -174,6 +175,7 @@ processing-bin
 pv
 python
 python-defusedxml
+python-jinja
 python-packaging
 python-pyqt6
 qt5ct
@@ -215,6 +217,7 @@ upower
 usb_modeswitch
 usbutils
 vi
+visual-studio-code-bin
 wget
 which
 wireplumber

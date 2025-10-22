@@ -1,1 +1,1 @@
-return {'mhinz/vim-startify'}
+return { enabled = false, "mhinz/vim-startify" }

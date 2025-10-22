@@ -178,9 +178,11 @@ return {
 				}
 			end,
 			formatters_by_ft = {
+				cpp = { "clang-format" },
 				astro = { "prettierd" },
 				css = { "prettierd" },
 				scss = { "prettierd" },
+				cs = { "csharpier" },
 				javascript = { "prettierd" },
 				javascriptreact = { "prettierd" },
 				typescript = { "prettierd" },

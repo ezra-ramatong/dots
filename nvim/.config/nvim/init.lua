@@ -69,12 +69,13 @@ g.mapleader = " "
 map("i", "jk", "<ESC>", { silent = true })
 map("n", "<leader>w", ":w<cr>")
 map("n", "<leader>wa", ":wall<cr>")
-map("n", "<leader>c", ":bd!<cr>", { desc = "Kill buffer" })
 map("n", "<leader>q", ":close<cr>", { desc = "Close window" })
-map("n", "<leader>xx", ":confirm qall<cr>", { desc = "Quit vim" })
+map("n", "<leader>qq", ":confirm qall<cr>", { desc = "Quit vim" })
+map("n", "<leader>c", ":bd!<cr>", { desc = "Kill buffer" })
 map("n", "<ESC>", ":noh<cr>")
 map("t", "<leader>z", "<C-\\><C-n>")
 map("n", "<leader>yf", "<cmd>%y+<CR>", { desc = "Yank file to system clipboard" })
+map("n", "<leader>vs", "<cmd>tabnew | term code .<CR>", { desc = "Open VSCode in Current Project" })
 
 map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move line dbdown (normal)" })
 map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move line up (normal)" })
@@ -87,7 +88,9 @@ map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move line up (visual)" })
 map("n", "<C-h>", "<C-w>h", { silent = true, desc = "Left window navigation" })
 map("n", "<C-j>", "<C-w>j", { silent = true, desc = "Down window navigation" })
 map("n", "<C-k>", "<C-w>k", { silent = true, desc = "Up window navigation" })
-map("n", "<C-l>", "<c-w>l", { silent = true, desc = "Right window navigation" })
+map("n", "<C-l>", "<C-w>l", { silent = true, desc = "Right window navigation" })
+
+map("n", "<leader>d", "<C-w>d", { silent = true, desc = "Right window navigation" })
 
 -- [Tab navigation]
 map("n", "<leader>i", ":tabN<cr>", { desc = "Previous tab" })
@@ -95,8 +98,9 @@ map("n", "<leader>o", ":tabn<cr>", { desc = "Next tab" })
 map("n", "<leader>te", ":tabe<cr>", { desc = "New tab" })
 
 -- [Terminal]
-map("n", "<leader>tt", ":tabnew | :term<cr>")
-map("n", "<leader>t", ":hor term<cr>")
+map("n", "<leader>t", ":tabnew | :term<cr>")
+map("n", "<leader>tt", ":hor term<cr>")
+map("n", "<leader>v", ":55vsp | term<cr>")
 map("n", "<leader>g", ":tabnew | :term lazygit<cr>", { noremap = true, silent = true, desc = "Run Lazygit" }) -- lazygit
 
 -- [Yank to system clipboard]
@@ -142,6 +146,12 @@ map("n", "<leader>lz", "<cmd>Lazy<cr>", { desc = "Open Lazy" })
 -- [Mason - language tooling manager]
 map("n", "<leader>ma", "<cmd>Mason<cr>", { desc = "Open Mason" })
 
+-- [Dotnet]
+map("n", "<leader>r", "<cmd>tabnew | execute 'term node ' . expand('%:p')<cr>", { desc = "Run Node" })
+
+-- [Make]
+map("n", "<leader>m", "<cmd>tabnew | :term make -C build<cr>")
+
 -- ------------------------------------------------------------------------------------------
 
 -- AUTOCOMMANDS
@@ -158,6 +168,46 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
+-- Add this to your autocommands section in init.lua
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "java",
+	callback = function()
+		vim.opt_local.shiftwidth = 4
+		vim.opt_local.tabstop = 4
+		vim.opt_local.softtabstop = 4
+	end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "xml",
+	callback = function()
+		vim.opt_local.shiftwidth = 4
+		vim.opt_local.tabstop = 4
+		vim.opt_local.softtabstop = 4
+		vim.opt_local.expandtab = true
+	end,
+})
+
+-- Maven project creation
+vim.api.nvim_create_user_command("MavenNew", function(opts)
+	local args = vim.split(opts.args, " ")
+	if #args < 2 then
+		print("Usage: :MavenNew <groupId> <artifactId>")
+		return
+	end
+
+	local groupId = args[1]
+	local artifactId = args[2]
+
+	local cmd = string.format(
+		"mvn archetype:generate -DgroupId=%s -DartifactId=%s -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false",
+		groupId,
+		artifactId
+	)
+
+	vim.cmd("tabnew | term " .. cmd)
+end, { nargs = "*" })
 
 -- ------------------------------------------------------------------------------------------
 

@@ -6,14 +6,14 @@ XDG_DATA_HOME="$HOME/.local/share"
 export EDITOR="nvim"
 export VISUAL="$EDITOR"
 export TERMINAL="alacritty"
-export BROWSER="zen-browser"
+export BROWSER="chromium"
 export GIT_EDITOR="$EDITOR"
 export ELECTRON_OZONE_PLATFORM_HINT="wayland"
 export QT_QPA_PLATFORMTHEME="qt6ct"
 export GOPATH="$HOME/go"
 export GOBIN=""
 export GDK_BACKEND=wayland gimp
-# export JAVA_HOME="/usr/lib/jvm/java-21-openjdk/bin"
+export JAVA_HOME="$HOME/.sdkman/candidates/java/23.0.1-open"
 export JAVA_SRC_DIR="src"
 export JAVA_MAIN_CLASS="Main"
 export PGDATA=/var/lib/postgres/data
@@ -40,12 +40,12 @@ export FZF_DEFAULT_OPTS=" \
 
 
 # PATH
-export PATH=/usr/lib/jvm/java-21-openjdk/bin:$PATH
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:/usr/local/bin"
 #export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
-export PATH="$PATH:$HOME/JUCE/extras/Projucer/Builds/LinuxMakefile/build/"
+export PATH="$PATH:/home/ezra/.dotnet/tools"
+export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/apps/intellij-idea-community-edition/bin"
+export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/apps/rider/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/Dev/projects/boilerplate/"
-# export PATH="$PATH:/usr/lib/jvm/java-21-openjdk/bin"
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
