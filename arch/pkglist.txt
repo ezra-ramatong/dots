@@ -5,6 +5,7 @@ alsa-firmware
 alsa-plugins
 alsa-utils
 aspell
+aspnet-runtime
 aspnet-runtime-8.0
 b43-fwcutter
 baobab
@@ -29,6 +30,7 @@ dnsmasq
 docker
 docker-compose
 dosfstools
+dotnet-sdk
 dotnet-sdk-8.0
 downgrade
 dracut
@@ -153,6 +155,7 @@ noto-fonts-extra
 nss-mdns
 ntfs-3g
 ntp
+nuget
 obs-studio
 obsidian
 ollama

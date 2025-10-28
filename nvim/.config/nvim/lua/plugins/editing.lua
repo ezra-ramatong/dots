@@ -34,7 +34,7 @@ return {
 		"hrsh7th/nvim-cmp",
 		enabled = true,
 		event = "BufEnter",
-		commit = "b356f2c",
+		-- commit = "b356f2c",
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-path",

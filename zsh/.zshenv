@@ -48,4 +48,6 @@ export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/apps/intellij-idea-commu
 export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/apps/rider/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/Dev/projects/boilerplate/"
+export PATH="$PATH:$HOME/.bin/Microsoft.CodeAnalysis.LanguageServer.linux-x64.5.3.0-1.25527.1/content/LanguageServer/linux-x64/Microsoft.CodeAnalysis.LanguageServer"
+export PATH="$PATH:$HOME/.bin/Insomnia.Core-2023.4.0/"
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib

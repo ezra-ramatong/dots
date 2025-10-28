@@ -2,15 +2,26 @@ return {
 	{
 		"mason-org/mason-lspconfig.nvim",
 		dependencies = {
-			{ "mason-org/mason.nvim", opts = {} },
+			{
+				"mason-org/mason.nvim",
+				opts = {
+					registries = {
+						"github:mason-org/mason-registry",
+						"github:Crashdummyy/mason-registry",
+					},
+				},
+			},
 			"neovim/nvim-lspconfig",
+			"Hoffs/omnisharp-extended-lsp.nvim",
 		},
 		config = function()
 			require("mason").setup()
 			require("mason-lspconfig").setup({
+
 				automatic_enable = {
 					exclude = { "jdtls" },
 				},
+
 				ensure_installed = {
 					"html",
 					"emmet_ls",
@@ -24,9 +35,9 @@ return {
 			})
 
 			local server_settings = {
+				roslyn = {},
 				cmake = {},
 				cpp = {},
-				omnisharp = {},
 				ts_ls = {},
 				lua_ls = {
 					settings = {
@@ -64,25 +75,17 @@ return {
 					vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
 				end
 				map("gd", vim.lsp.buf.definition, "Goto definition")
-				map("gD", vim.lsp.buf.declaration, "Goto declaration")
-				map("<leader>gr", require("telescope.builtin").lsp_references, "Search references")
-				map("gI", vim.lsp.buf.implementation, "Goto implementation")
-				map("gT", vim.lsp.buf.type_definition, "Type definition")
+				map("gr", require("telescope.builtin").lsp_references, "Goto references")
 				map("K", vim.lsp.buf.hover, "Hover documentation")
 				map("<leader>la", vim.lsp.buf.code_action, "Code action")
 				map("<leader>ld", vim.diagnostic.setqflist, "List diagnostics")
 				map("<leader>lf", vim.lsp.buf.format, "Format buffer")
 				map("<leader>li", "<cmd>LspInfo<cr>", "LSP information")
-				map(
-					"<leader>lih",
-					"<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<cr>",
-					"Toggle inlay hints"
-				)
 				map("<leader>lr", vim.lsp.buf.rename, "Rename current symbol")
 				map("<leader>ls", require("telescope.builtin").lsp_document_symbols, "Search document symbols")
 				map("<leader>lw", require("telescope.builtin").lsp_workspace_symbols, "Search workspace symbols")
-				map("[d", vim.diagnostic.goto_prev, "Previous diagnostic")
-				map("]d", vim.diagnostic.goto_next, "Next diagnostic")
+				map("[d", "<cmd>lua vim.diagnostic.jump({ count = 1, float = true })<cr>", "Next diagnostic")
+				map("]d", "<cmd>lua vim.diagnostic.jump({ count = -1, float = true })<cr>", "Previous diagnostic")
 			end
 
 			for name, config in pairs(server_settings) do
@@ -103,5 +106,4 @@ return {
 			vim.diagnostic.config(config)
 		end, -- config end
 	},
-	{ "Hoffs/omnisharp-extended-lsp.nvim" },
 }
