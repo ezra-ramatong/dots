@@ -17,7 +17,6 @@ bluez
 bluez-utils
 btrfs-progs
 cantarell-fonts
-chromium
 cmake
 cryptsetup
 dart-sass
@@ -85,7 +84,6 @@ gnome-themes-extra
 gnome-tweaks
 gnome-usage
 gnome-weather
-go
 grub
 gst-libav
 gst-plugin-pipewire
@@ -158,7 +156,6 @@ ntp
 nuget
 obs-studio
 obsidian
-ollama
 openssh
 os-prober
 pacman-contrib
@@ -170,11 +167,9 @@ pipewire-jack
 pipewire-pulse
 pkgfile
 plocate
-pnpm
 poppler-glib
 postgresql
 power-profiles-daemon
-processing-bin
 pv
 python
 python-defusedxml
@@ -243,6 +238,5 @@ xorg-xrandr
 xterm
 yay
 yt-dlp
-zeal
 zip
 zsh
