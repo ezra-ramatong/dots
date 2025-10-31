@@ -13,11 +13,19 @@ return {
 						}
 					end,
 				},
+				float = {
+					solid = true,
+				},
 				integrations = {
-					telescope = {
-						style = "nvchad",
+					cmp = true,
+					gitsigns = true,
+					harpoon = true,
+					mini = {
+						enabled = true,
 					},
-					{ blink_cmp = true },
+					telescope = {
+						style = "nvchad_outlined",
+					},
 				},
 			})
 			-- light mode

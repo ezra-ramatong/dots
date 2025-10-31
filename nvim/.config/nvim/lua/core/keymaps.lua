@@ -63,7 +63,8 @@ map("n", "<leader>tt", ":hor term<cr>")
 map("n", "<leader>v", ":55vsp | term<cr>")
 
 -- Git
-map("n", "<leader>lg", ":tabnew | :term lazygit<cr>", { noremap = true, silent = true, desc = "Run Lazygit" })
+map("n", "<leader>gb", "<cmd>Git blame<cr>", { desc = "Git blame" })
+map("n", "<leader>gbl", "<cmd>Git blame_line<cr>", { desc = "Git blame" })
 
 -- Oil (File Explorer)
 map("n", "<leader>e", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })

@@ -10,6 +10,7 @@ return {
 				icons_enabled = true,
 				component_separators = "",
 				section_separators = "",
+				theme = "catppuccin",
 			},
 			inactive_winbar = {
 				lualine_a = {},
