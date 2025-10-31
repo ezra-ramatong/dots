@@ -10,6 +10,7 @@ return {
 			enabled = vim.fn.executable("make") == 1,
 			build = "make",
 		},
+		"nvim-telescope/telescope-dap.nvim",
 	},
 	config = function()
 		local actions = require("telescope.actions")
@@ -45,5 +46,6 @@ return {
 			},
 		})
 		require("telescope").load_extension("fzf")
+		require("telescope").load_extension("dap")
 	end,
 }
