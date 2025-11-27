@@ -17,6 +17,7 @@ bluez
 bluez-utils
 btrfs-progs
 cantarell-fonts
+chromium
 cmake
 cryptsetup
 dart-sass
@@ -120,6 +121,7 @@ libdvdcss
 libgsf
 libnss_nis
 libopenraw
+libreoffice-fresh
 libwnck3
 linux
 linux-firmware
@@ -159,6 +161,7 @@ ntp
 nuget
 obs-studio
 obsidian
+ollama
 openssh
 os-prober
 pacman-contrib
@@ -171,14 +174,18 @@ pipewire-pulse
 pkgfile
 plocate
 poppler-glib
-postgresql
 power-profiles-daemon
 pv
 python
 python-defusedxml
 python-jinja
 python-packaging
+python-pip
+python-pipx
+python-pyqt5
 python-pyqt6
+python-pyxdg
+python-xlib
 qt5ct
 qt6ct
 rebuild-detector
@@ -241,5 +248,6 @@ xorg-xrandr
 xterm
 yay
 yt-dlp
+zen-browser-bin
 zip
 zsh
